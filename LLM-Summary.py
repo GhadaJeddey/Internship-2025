@@ -6,7 +6,7 @@ from google.generativeai.types import GenerationConfig
 
 from groq import Groq
 
-def groq_summarize_article(article_text):
+def groq_summarize_article(article_text,model,prompt):
     client = Groq(
         api_key="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",
     )
@@ -14,22 +14,22 @@ def groq_summarize_article(article_text):
         messages=[
             {
                 "role": "user",
-                "content": f"Summarize the following text in one clear and concise paragraph, capturing the key ideas without missing critical points. Ensure the summary is easy to understand and avoids excessive detail. : {article_text}",
+                "content": str(prompt) + f" .Article : {article_text} ", 
             }
         ],
-        model="LLaMA-3.3-70B-Versatile",
+        model=model,
     )
-
+    
     summary = chat_completion.choices[0].message.content
     print("Summary:", summary)
     return summary
 
-def gemini_summarize_article(article_text):
+def gemini_summarize_article(article_text,prompt):
     genai.configure(api_key="AIzaSyC1OVCakG2ug2Bz5sKgJLTujr5mguPtHU0")
-    model = genai.GenerativeModel(model_name="gemini-1.5-flash")
+    model = genai.GenerativeModel(model_name="gemini-2.0-flash")
 
     response = model.generate_content(
-        f"Summarize the following text in one clear and concise paragraph, capturing the key ideas without missing critical points. Ensure the summary is easy to understand and avoids excessive detail: {article_text}",
+        str(prompt) + f" .Article : {article_text}",
         generation_config=GenerationConfig(max_output_tokens=500)
     )
 
@@ -40,8 +40,21 @@ def gemini_summarize_article(article_text):
 with open('articles.json', 'r', encoding='utf-8') as f:
     articles = json.load(f)
 
-article_key = "Medium-1" 
+article_key = "Long-2"
 article_text = articles.get(article_key)
-groq_summarize_article(article_text)
-#gemini_summarize_article(article_text) 
 
+prompt_gemini = """Summarize the following article in a concise and informative paragraph. Focus on key events, important facts, and any significant conclusions.The paragraph should not exceed 100 words."""
+prompt_llama = """You are a helpful assistant. Please read the following article and write an abstractive summary. Focus on key events, major takeaways, and eliminate redundancy. The paragraph should not exceed 100 words."""
+prompt_gemma = """Summarize the following article in clear, concise and informative paragraph. Highlight the main points, important events, and key conclusions.The paragraph should not exceed 100 words."""
+
+print('-------llama-3.3-70b-versatile----------')
+groq_summarize_article(article_text, "llama-3.3-70b-versatile", prompt_llama)
+
+print("-------gemma2-9b-it----------")
+groq_summarize_article(article_text, "gemma2-9b-it",prompt_gemma)
+
+print('-------gemini-2.0-flash----------')
+gemini_summarize_article(article_text, prompt_gemini)
+
+print("-------------- Article -------------")
+print(article_text)
