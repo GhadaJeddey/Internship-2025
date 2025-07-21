@@ -1,0 +1,147 @@
+
+=== Article 1 ===
+Texte : Elon Musk, the CEO of Tesla and SpaceX, announced a new partnership with Apple . during a global tec...
+Nombre d'entités : 7
+Entités liées à Wikidata: 4
+Entités détectées :
+Entité :  Elon Musk | Type : PER | Score : 0.999 | Contexte : Elon Musk, the CEO of Tesla and SpaceX, announced a new partnership with Apple .
+  -> Wikidata ID : Q317521
+  -> Description : South African-Canadian-American businessman, engineer, inventor and political figure
+  -> Wikidata Candidates : Elon Musk
+
+Entité :  Tesla | Type : ORG | Score : 0.999 | Contexte : Elon Musk, the CEO of Tesla and SpaceX, announced a new partnership with Apple .
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+Entité :  SpaceX | Type : ORG | Score : 0.999 | Contexte : Elon Musk, the CEO of Tesla and SpaceX, announced a new partnership with Apple .
+  -> Wikidata ID : Q193701
+  -> Description : American private aerospace company
+  -> Wikidata Candidates : SpaceX
+
+Entité :  Apple | Type : ORG | Score : 0.996 | Contexte : Elon Musk, the CEO of Tesla and SpaceX, announced a new partnership with Apple .
+  -> Wikidata ID : Q121079428
+  -> Description : production company
+  -> Wikidata Candidates : Apple, Apple, Apple
+
+Entité :  San Francisco | Type : LOC | Score : 0.999 | Contexte : during a global tech summit in San Francisco.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+Entité :  iOS | Type : MISC | Score : 1.000 | Contexte : The collaboration aims to integrate iOS features into Tesla vehicles by the end of 2025.
+  -> Wikidata ID : Q48493
+  -> Description : mobile operating system by Apple Inc.
+  -> Wikidata Candidates : iOS
+
+Entité : the end of 2025 | Type : DATE | Score : 1.000 | Contexte : The collaboration aims to integrate iOS features into Tesla vehicles by the end of 2025.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+
+=== Article 2 ===
+Texte : Meanwhile, Microsoft is planning to acquire a small startup based in Berlin, known for its advanceme...
+Nombre d'entités : 4
+Entités liées à Wikidata : 3
+Entités détectées :
+
+Entité :  Microsoft | Type : ORG | Score : 0.995 | Contexte : Meanwhile, Microsoft is planning to acquire a small startup based in Berlin, known for its advancements in AI-powered language translation.
+  -> Wikidata ID : Q2283
+  -> Description : American multinational technology corporation
+  -> Wikidata Candidates : Microsoft, Microsoft s.r.o.
+
+Entité :  Berlin | Type : LOC | Score : 1.000 | Contexte : Meanwhile, Microsoft is planning to acquire a small startup based in Berlin, known for its advancements in AI-powered language translation.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+Entité :  AI | Type : MISC | Score : 0.781 | Contexte : Meanwhile, Microsoft is planning to acquire a small startup based in Berlin, known for its advancements in AI-powered language translation.
+  -> Wikidata ID : Q42970
+  -> Description : non-governmental organization based in the United Kingdom
+  -> Wikidata Candidates : Amnesty International, Singapore Islamic Movement, Ala-Ile
+
+Entité :  Google | Type : ORG | Score : 0.991 | Contexte : This move could challenge Google's dominance in the sector.
+  -> Wikidata ID : Q20800404
+  -> Description : American multinational technology conglomerate
+  -> Wikidata Candidates : Alphabet Inc., Google Canada, Google
+
+
+=== Article 3 ===
+Texte : In the entertainment world, Taylor Swift’s new album "Midnights" broke global streaming records on S...
+Nombre d'entités : 9
+Entités liées à Wikidata : 3
+Entités détectées :
+Entité :  Taylor Swift | Type : PER | Score : 0.999 | Contexte : In the entertainment world, Taylor Swift’s new album "Midnights" broke global streaming records on Spotify and Apple Music just hours after release.
+  -> Wikidata ID : Q26876
+  -> Description : American singer-songwriter (born 1989)
+  -> Wikidata Candidates : Taylor Swift
+
+Entité : Midnights | Type : MISC | Score : 0.925 | Contexte : In the entertainment world, Taylor Swift’s new album "Midnights" broke global streaming records on Spotify and Apple Music just hours after release.
+  -> Wikidata ID : Q113640799
+  -> Description : 2022 album by Taylor Swift
+  -> Wikidata Candidates : Midnights, Midnight
+
+Entité :  Spotify | Type : ORG | Score : 0.908 | Contexte : In the entertainment world, Taylor Swift’s new album "Midnights" broke global streaming records on Spotify and Apple Music just hours after release.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+Entité :  Apple Music | Type : ORG | Score : 0.876 | Contexte : In the entertainment world, Taylor Swift’s new album "Midnights" broke global streaming records on Spotify and Apple Music just hours after release.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+Entité : just hours | Type : TIME | Score : 1.000 | Contexte : In the entertainment world, Taylor Swift’s new album "Midnights" broke global streaming records on Spotify and Apple Music just hours after release.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+Entité :  Grammy-winning | Type : MISC | Score : 0.995 | Contexte : The Grammy-winning artist is also scheduled to perform at Wembley Stadium in London next summer.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+Entité :  Wembley Stadium | Type : LOC | Score : 0.994 | Contexte : The Grammy-winning artist is also scheduled to perform at Wembley Stadium in London next summer.
+  -> Wikidata ID : Q128468
+  -> Description : football stadium in London, England, UK, inaugurated in March 2007
+  -> Wikidata Candidates : Wembley Stadium, Wembley Stadium
+
+Entité :  London | Type : LOC | Score : 0.999 | Contexte : The Grammy-winning artist is also scheduled to perform at Wembley Stadium in London next summer.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+Entité : next summer | Type : DATE | Score : 1.000 | Contexte : The Grammy-winning artist is also scheduled to perform at Wembley Stadium in London next summer.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+
+=== Article 4 ===
+Texte : The Louvre Museum in Paris will host an exclusive exhibition of Leonardo da Vinci’s original sketche...
+Nombre d'entités : 4
+Entités liées à Wikidata : 2
+Entités détectées :
+Entité :  Louvre Museum | Type : LOC | Score : 0.964 | Contexte : The Louvre Museum in Paris will host an exclusive exhibition of Leonardo da Vinci’s original sketches, starting in October.
+  -> Wikidata ID : Q19675
+  -> Description : art and archeology museum in Paris, France
+  -> Wikidata Candidates : Louvre Museum
+
+Entité :  Paris | Type : LOC | Score : 0.999 | Contexte : The Louvre Museum in Paris will host an exclusive exhibition of Leonardo da Vinci’s original sketches, starting in October.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+Entité :  Leonardo da Vinci | Type : PER | Score : 1.000 | Contexte : The Louvre Museum in Paris will host an exclusive exhibition of Leonardo da Vinci’s original sketches, starting in October.
+  -> Wikidata ID : Q762
+  -> Description : Italian Renaissance polymath (1452−1519)
+  -> Wikidata Candidates : Leonardo da Vinci
+
+Entité : October | Type : DATE | Score : 1.000 | Contexte : The Louvre Museum in Paris will host an exclusive exhibition of Leonardo da Vinci’s original sketches, starting in October.
+  -> Mapped ID : N/A
+  -> Wikidata Candidates : Aucun
+
+
+=== Résumé global ===
+Total articles : 4
+Total entités : 24
+Total entités liées à Wikidata : 12
+Pourcentage d'entités liées : 50.0%
+
+Répartition par type :
+ORG : 7
+LOC : 6
+MISC : 4
+PER : 3
+DATE : 3
+TIME : 1

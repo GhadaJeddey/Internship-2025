@@ -1,0 +1,12 @@
+model:
+  spacy_model: "en_core_web_trf"
+  roberta_model: "Jean-Baptiste/roberta-large-ner-english"
+  max_length: 512
+
+data:
+  raw_path: "data/raw"
+  articles_file: "articles.txt"
+  output_file: "ner_results.txt"
+  separator: null
+  exclude_types: []  
+  save_json: true
