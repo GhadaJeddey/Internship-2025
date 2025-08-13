@@ -24,8 +24,10 @@ BERTScore usually remains high, but small differences in phrasing can disproport
 
 ## Results : 
 	
-"average_rougeL_f1": 0.28660743863399357 -> Moderate 
+"average_rougeL_f1": 0.28660743863399357 -> Moderate  
+
 "average_bert_f1": 0.8952425122261047 -> High 
 
 ## Evaluation : 
 These results indicate that the model captures the semantic meaning of the original article . The moderately low value of the rougeL score indiacates that there’s not much of a lexical overlap between the reference summary and the generated summary but that is quite understandable since the summarization is abstractive so the ways of summarizing without paraphrasing differs . 
+
