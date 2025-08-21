@@ -1,0 +1,99 @@
+{
+  "results": [
+    {
+      "article_index": 1,
+      "reference_summary": "A new study published in Nature Communications suggests the prolonged global warming following the Permian extinction ('Great Dying') was driven by the collapse of tropical forests. Analyzing fossil data, researchers found deforestation significantly reduced Earth's carbon storage capacity, maintaining high atmospheric CO2 levels for millions of years, even after volcanic activity subsided.  This highlights a potential \"threshold effect,\" where forest loss becomes irreversible, impeding carbon cycles and hindering recovery.  The findings serve as a warning for the future, suggesting that rainforest collapse from human-caused warming could trigger a similar, self-perpetuating cycle of extreme climate change.",
+      "generated_summary": "Scientists have discovered why the planet remained hot for 5 million years after the 'Great Dying' The loss of tropical forests significantly reduced the planet's ability to store carbon. This led to high levels of carbon lingering in the atmosphere for millions of years. If rapid global warming causes today\u2019s rainforests to collapse, the planet could reach a tipping point where warming accelerates, even if human carbon emissions were to stop. The study makes it clear that pushing tropical forests too far could have catastrophic consequences.",
+      "rouge_metrics": {
+        "rouge1": 0.4086021505376344,
+        "rouge2": 0.08695652173913045,
+        "rougeL": 0.25806451612903225,
+        "rougeLsum": 0.25806451612903225
+      },
+      "rougeL_f1": 0.25806451612903225,
+      "bert_f1": 0.8875371813774109
+    },
+    {
+      "article_index": 2,
+      "reference_summary": "Qantas Airways suffered a major cyber breach impacting a third-party customer service platform. Hackers accessed roughly six million customer records, including names, emails, phone numbers, birth dates, and frequent flyer numbers. Qantas detected unusual activity and contained the breach, but anticipates a significant data loss. The incident is Australia's most high-profile since 2022 and a setback for Qantas, currently working to rebuild public trust following past controversies. Authorities have been notified, and the airline is investigating the extent of the damage. The breach raises concerns about potential social engineering tactics and global airline vulnerability.",
+      "generated_summary": "A cyber hacker broke into a database containing the personal information of millions of customers, Qantas (QAN.AX) said. It is Australia's biggest breach in years and a setback for an airline rebuilding trust after a reputational crisis. The hacker targeted a call centre and gained access to a third-party customer service platform containing six million names, email addresses, phone numbers, birth dates and frequent flyer numbers. The airline did not specify the location of the call centre or customers whose information was compromised.",
+      "rouge_metrics": {
+        "rouge1": 0.4371584699453552,
+        "rouge2": 0.22099447513812157,
+        "rougeL": 0.27322404371584696,
+        "rougeLsum": 0.27322404371584696
+      },
+      "rougeL_f1": 0.27322404371584696,
+      "bert_f1": 0.9047185778617859
+    },
+    {
+      "article_index": 3,
+      "reference_summary": "Anysphere, the company behind the AI coding editor Cursor, launched a web app extending its AI coding tools beyond its IDE. This allows users to manage and assign tasks to background AI agents via browser, similar to its Slack integration. Users can now submit natural language requests, monitor agent progress, and merge code. This initiative aims to reduce friction for Cursor users, who have driven the company to over $500 million in ARR with adoption by over half of the Fortune 500. Anysphere also introduced a $200/month Pro tier to capitalize on its rapid growth.",
+      "generated_summary": "Anysphere, the company behind the popular AI coding editor, Cursor, has launched a new web app that allows users to manage a network of coding agents from their browser. This move is part of Anysp here's strategy to expand beyond its core integrated development environment (IDE) and make its AI-powered tools more accessible. In May, the firm introduced background agents, which are AI systems that can autonomously solve coding tasks without user supervision. This was followed by a Slack integration in June, which enables users to assign tasks to these background agents by tagging @Cursor.",
+      "rouge_metrics": {
+        "rouge1": 0.48704663212435234,
+        "rouge2": 0.17801047120418848,
+        "rougeL": 0.27979274611398963,
+        "rougeLsum": 0.27979274611398963
+      },
+      "rougeL_f1": 0.27979274611398963,
+      "bert_f1": 0.8992286920547485
+    },
+    {
+      "article_index": 4,
+      "reference_summary": "Meta is aggressively pursuing superintelligence, aiming to create AI that surpasses human capabilities, despite an unclear path and significant technical hurdles like AI hallucination. CEO Mark Zuckerberg is recruiting top talent with high salaries, possibly driven by fear of being outpaced in the competitive AI landscape. However, experts suggest this ambition may be unrealistic, as current AI struggles to avoid errors and its unpredictability poses risks. Furthermore, simpler AI models are often more effective for enterprise applications, questioning the value of chasing superintelligence.",
+      "generated_summary": " Meta is building a superintelligence lab, seeking to create an AI system that can far outperform human intelligence in all domains. CEO Mark Zuckerberg has attempted to court hundreds of talented engineers and researchers for the lab with eye-popping pay packages. Without a precise vision, chasing superintelligence may be a pipe dream, said Bob Rogers, chief product and technology officer of Oii.ai. \"Going after a vague, undefined goal is not usually the path to success,\" he said. \"To immediately jump from where we are now \u2013 which is (large language models) being really cool language factories \u2013 and skipping (artificial general intelligence) is bold,\" he added.",
+      "rouge_metrics": {
+        "rouge1": 0.3386243386243386,
+        "rouge2": 0.0641711229946524,
+        "rougeL": 0.19047619047619047,
+        "rougeLsum": 0.19047619047619047
+      },
+      "rougeL_f1": 0.19047619047619047,
+      "bert_f1": 0.8741874098777771
+    },
+    {
+      "article_index": 5,
+      "reference_summary": "Palo Alto Networks, a leading cybersecurity firm, stands to gain from rising geopolitical tensions and cyber threats, as evidenced by increased organizational concerns and state-sponsored attacks. Despite Goldman Sachs maintaining a \"buy\" rating due to revenue growth and successful product sales, Palo Alto faces a \"maturity challenge\" with slowing sales and recurring revenue growth. While the cybersecurity sector anticipates substantial growth, increased competition looms. Despite these challenges, Palo Alto shares have demonstrated resilience amidst broader tech industry concerns, showcasing investor confidence in the company's ability to navigate the evolving landscape.",
+      "generated_summary": "Palo Alto Networks is the world's largest standalone cybersecurity company. Its stock has risen nearly 9% so far this year. But a look under the hood suggests that astronomical growth can't carry on forever. The slowdown suggests the company may be maturing and reaching a plateau where customer adoption is slowing. Nevertheless, the sector is expected to grow by hundreds of billions of dollars in the next decade, meaning there will be plenty of dollars to compete for, but likely more competitors. The rise of state-sanctioned cyberattacks, with China and Russia the best-known sponsors, has inflamed tensions.",
+      "rouge_metrics": {
+        "rouge1": 0.2383419689119171,
+        "rouge2": 0.041884816753926704,
+        "rougeL": 0.15544041450777202,
+        "rougeLsum": 0.15544041450777202
+      },
+      "rougeL_f1": 0.15544041450777202,
+      "bert_f1": 0.8669813275337219
+    },
+    {
+      "article_index": 6,
+      "reference_summary": "Oracle has emerged as a significant player in AI compute, fueled by its strategic partnership with ByteDance and massive investments in data centers, particularly in Singapore and Malaysia, creating a major AI hub. Oracle became the top lessor of US datacenter capacity from late 2023 to early 2025, securing over $130 billion in contracts expected in the next year, including \"Stargate\" deals, signaling its strong commitment to supporting the growing demand for AI infrastructure.",
+      "generated_summary": "Oracle has quietly become a key player in the AI compute race, largely due to the success of its partnership with ByteDance. The two companies poured billions into data centers in Singapore and Malaysia, which is now the world's second-largest AI hub. The company was the single largest lessor of datacenter capacity in the US from late 2023 to early 2025, securing over $130 billion in contracts over the next 12 months, including Stargate deals. It is also expected to secure over $100 billion in new deals over the coming 12 months.",
+      "rouge_metrics": {
+        "rouge1": 0.5595238095238095,
+        "rouge2": 0.3253012048192771,
+        "rougeL": 0.5119047619047619,
+        "rougeLsum": 0.5119047619047619
+      },
+      "rougeL_f1": 0.5119047619047619,
+      "bert_f1": 0.9299383759498596
+    },
+    {
+      "article_index": 7,
+      "reference_summary": "Researchers investigated the impact of safety training on AI models by comparing raw and chat-trained versions. They found that Anthropic's initial method for identifying safety circuits was flawed, hallucinating differences. Their improved \"BatchTopK\" method accurately pinpointed interpretable safety circuits, such as those for refusal detection and stereotype filtering. This refined approach captured a significantly higher percentage (88%) of the behavioral changes induced by safety training compared to the previous, inaccurate method (60%), offering a more reliable way to understand and improve AI safety.",
+      "generated_summary": "Researchers compared raw AI models with their chat-trained versions to understand what safety training actually changes inside the model. They discovered that Anthropic's standard comparison technique was hallucinating thousands of fake differences. BatchTopK fix revealed real interpretable safety circuits like refusal detection and stereotype filtering, capturing 88% of behavioral changes versus just 60% for the broken method. It also found 'off-limits' neurons that make the model refuse harmful requests. The research was published in the journal Artificial Intelligence.",
+      "rouge_metrics": {
+        "rouge1": 0.49397590361445787,
+        "rouge2": 0.18292682926829265,
+        "rougeL": 0.3373493975903615,
+        "rougeLsum": 0.3373493975903615
+      },
+      "rougeL_f1": 0.3373493975903615,
+      "bert_f1": 0.9041060209274292
+    }
+  ],
+  "average_rougeL_f1": 0.28660743863399357,
+  "average_bert_f1": 0.8952425122261047
+}
+
+
