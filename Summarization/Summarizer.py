@@ -6,43 +6,44 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from langchain.text_splitter import TokenTextSplitter
 
 
+'''
+    Functions : 
+    - token_counter : return the number of tokens in the input text 
+    - chunking_token_based : 
+    - chunking_paragraph_based
+    - progressive_summary
+    - summarize_text
+
+    Logic : 
+    - If text is short (less than 1024 token) , summarize directly 
+    - If text is long (more than 1024 tokens), use chunking : 
+        -- The chunking is paragraph based by default 
+        -- If the paragraph itself is still long , or no paragraphs are to be found in the article , use token-based chunking with overlap between chunks 
+    - The summary of a previous chunk is concatenated with the next chunk and fed into the model to summarize again (process repeated until the entire text is summarized)
+
+'''
 
 class Summarizer : 
-    def __init__(self, model_name="facebook/bart-large-cnn"): 
-
+    def __init__(self, model_name: str ="facebook/bart-large-cnn" ) -> None: 
+        self.model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name).eval()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        
-    def test_bart_base_cnn(self,input_text):
-        """ Test BART-base-cnn model """ 
-        input_ids = self.tokenizer.encode(input_text, return_tensors="pt")
-        
-        generation_config = GenerationConfig(
-            input_ids=input_ids,
-            bos_token_id=self.model.config.bos_token_id,
-            eos_token_id=self.model.config.eos_token_id,
-            length_penalty=2.0,
-            max_length=128,
-            min_length=56,
-            num_beams=4,
-            no_repeat_ngram_size=3,
-            early_stopping=True,
-        )
 
-        summary_ids = self.model.generate(
-            input_ids,
-            generation_config=generation_config
-        )
-        print(self.tokenizer.decode(summary_ids[0], skip_special_tokens=True))
-
-    def token_counter(self, article):
+    def token_counter(self, article :str) -> int:
+        ''' 
+        Count the number of tokens in the input article.
+        Args :
+            article (str): The input article text.
+        Returns : 
+            int: The number of tokens in the input article.
+        '''
         tokens = self.tokenizer(article, return_tensors="pt", truncation=False)
         num_tokens = tokens.input_ids.shape[1]
         return num_tokens
 
-    def chunking_token_based(self,text, chunk_size=400, stride=100):
-        """
+    def chunking_token_based(self,text: str, chunk_size:int =400, stride:int =100) -> list:
+        ''''
         Token-based chunking with overlap between two consecutive chunks 
         Args:
             text (str): The input text to be chunked.
@@ -50,7 +51,8 @@ class Summarizer :
             stride (int): Overlap in tokens between chunks.
         Returns:
            list: A list of text chunks.
-        """
+           
+        '''
         splitter = TokenTextSplitter(
             chunk_size=chunk_size,        
             chunk_overlap=stride,  
@@ -59,9 +61,16 @@ class Summarizer :
         chunks = splitter.split_text(text)
         return chunks
 
-    def chunking_paragraph_based(self,text, max_tokens_per_chunk=400): 
-    
-        """Simple semantic chunking by paragraph (assuming \n\n separation) no sliding window """
+    def chunking_paragraph_based(self,text :str, max_tokens_per_chunk :int =400) -> list:
+
+        '''
+        Simple semantic chunking by paragraph (assuming \n\n separation) no sliding window 
+        Args :
+            text (str): The input text to be chunked.
+            max_tokens_per_chunk (int): Maximum tokens allowed per chunk.
+        Returns : 
+            list: A list of text chunks.
+        '''
         
         paragraphs = text.split('\n\n')
         chunks = []
@@ -71,13 +80,13 @@ class Summarizer :
                 chunks.append(para)
                 
             else:
-                # fallback if paragraph too long
+                # fallback if paragraph itself is too long or no paragraphs are found 
                 chunks.extend(self.chunking_token_based(para, chunk_size=max_tokens_per_chunk))
         return chunks
 
 
-    def progressive_summary(self,chunks, max_length=500, min_length=100, num_beams=2, length_penalty=2.0):
-    
+    def progressive_summary(self,chunks: list, max_length:int =500, min_length :int=100, num_beams:int =2, length_penalty:int =2.0) -> str:
+
         """Safe progressive summarization that handles token limits : Combine previous summary with current chunk
             Args : 
                 chunks (list): List of text chunks to summarize.
@@ -92,7 +101,6 @@ class Summarizer :
         prev_summary = " "
         
         for i, chunk in enumerate(chunks):
-            print(f"Processing chunk {i+1}/{len(chunks)}")
 
             if prev_summary:
                 combined_text = prev_summary + " " + chunk 
@@ -103,7 +111,6 @@ class Summarizer :
 
             if tokens_length > 1000: 
                 # If too long, use the chunk without the previous summary 
-                print(f"Combined text too long ({tokens_length} tokens), using chunk only ..")
                 input_text = chunk
             else:
                 input_text = combined_text
@@ -113,17 +120,28 @@ class Summarizer :
         final_summary = prev_summary.strip()
         
         return final_summary
-    
-    def summarize_text(self,text, max_length=500, min_length=100, num_beams=2 , length_penalty=2.0):
-       
-        token_count = self.token_counter(text)
+
+    def summarize_text(self, text: str, max_length: int = 500, min_length: int = 100, num_beams: int = 2, length_penalty: float = 2.0) -> str:
+        '''
+        Summarize the input text using the model.
+        Args:
+            text (str): The input text to be summarized.
+            max_length (int): Maximum length of the summary.
+            min_length (int): Minimum length of the summary.
+            num_beams (int): Number of beams for beam search.
+            length_penalty (float): Length penalty for the summary.
+        Returns:
+            str: The generated summary.
         
+        '''
+        token_count = self.token_counter(text)
+
+        # if text is long -> use chunking 
         if token_count > 1024:
-            print(f"Text too long ({token_count} tokens). Using chunking approach...")
             chunks = self.chunking_paragraph_based(text)
             return self.progressive_summary(chunks)
         
-        # If text is short enough, summarize directly 
+        # If text is short enough -> summarize directly 
         inputs = self.tokenizer.encode(text, 
                                 return_tensors="pt", 
                                 truncation=True, 
@@ -134,8 +152,17 @@ class Summarizer :
                                     num_beams=num_beams, length_penalty=length_penalty, early_stopping=True)
 
         return self.tokenizer.decode(summary_ids[0], skip_special_tokens=True)
-  
-    def evaluation(self,reference_summary, summary): 
+
+    def evaluation(self, reference_summary: str, summary: str) -> tuple:
+        '''
+            Evaluate the generated summary against the reference summary using various metrics.
+            Args :
+                reference_summary (str): The reference summary to compare against.
+                summary (str): The generated summary to evaluate.
+            Returns : 
+                rouge_score (dict): The ROUGE score metrics.
+                bert_score (int): The BERT score metrics.
+        '''
         rouge = load("rouge")
         bleu = load("bleu")
         bertscore = load("bertscore")
@@ -144,12 +171,23 @@ class Summarizer :
         bert_score = bertscore.compute(predictions=[summary], references=[reference_summary],lang="en")
 
         return rouge_score, bert_score
-    
-    def evaluate_on_all_articles(self, md_path="articles-gemini.md", output_path="summarization-results-compared-to-gemini.json"):
+
+    def evaluate_on_all_articles(self, md_path: str = "Summarization-task/articles.md", output_path: str = "Summarization-task/summarization-final-results.json") -> tuple:
+        '''
+        Evaluate the summarization model on all articles.   
+        Args : 
+            md_path (str): The path to the markdown file containing articles.
+            output_path (str): The path to the output JSON file for saving results.
+        Returns : 
+            tuple: A tuple containing the average ROUGE-1, ROUGE-2, ROUGE-L, and BERT scores.
+        '''
+        
         with open(md_path, "r", encoding="utf-8") as f:
             samples = f.read().split("# Article")[1:]
 
-        all_rouge = []
+        all_rouge1 = []
+        all_rouge2 = []
+        all_rougeL = []
         all_bert = []
         results = []
 
@@ -164,34 +202,47 @@ class Summarizer :
                 if key in rouge_score:
                     rouge_metrics[key] = rouge_score[key]
 
-            rouge_f1 = rouge_score["rougeL"] if "rougeL" in rouge_score else 0
+            rouge1_f1 = rouge_score["rouge1"] if "rouge1" in rouge_score else 0
+            rouge2_f1 = rouge_score["rouge2"] if "rouge2" in rouge_score else 0
+            rougeL_f1 = rouge_score["rougeL"] if "rougeL" in rouge_score else 0
             bert_f1 = sum(bert_score["f1"]) / len(bert_score["f1"]) if bert_score["f1"] else 0
-            all_rouge.append(rouge_f1)
+            all_rouge1.append(rouge1_f1)
+            all_rouge2.append(rouge2_f1)
+            all_rougeL.append(rougeL_f1)
             all_bert.append(bert_f1)
-            print(f"Article {idx+1}: ROUGE-L F1={rouge_f1:.4f}, BERTScore F1={bert_f1:.4f}")
+            print(f"Article {idx+1}: ROUGE-1 F1={rouge1_f1:.4f}, ROUGE-2 F1={rouge2_f1:.4f}, ROUGE-L F1={rougeL_f1:.4f}, BERTScore F1={bert_f1:.4f}")
             results.append({
                 "article_index": idx+1,
                 "reference_summary": reference.strip(),
                 "generated_summary": summary,
                 "rouge_metrics": rouge_metrics,
-                "rougeL_f1": rouge_f1,
+                "rouge1_f1": rouge1_f1,
+                "rouge2_f1": rouge2_f1,
+                "rougeL_f1": rougeL_f1,
                 "bert_f1": bert_f1
             })
 
-        avg_rouge = sum(all_rouge) / len(all_rouge) if all_rouge else 0
+        avg_rouge1 = sum(all_rouge1) / len(all_rouge1) if all_rouge1 else 0
+        avg_rouge2 = sum(all_rouge2) / len(all_rouge2) if all_rouge2 else 0
+        avg_rougeL = sum(all_rougeL) / len(all_rougeL) if all_rougeL else 0
         avg_bert = sum(all_bert) / len(all_bert) if all_bert else 0
-        print(f"\nAverage ROUGE-L F1: {avg_rouge:.4f}")
+        print(f"\nAverage ROUGE-1 F1: {avg_rouge1:.4f}")
+        print(f"Average ROUGE-2 F1: {avg_rouge2:.4f}")
+        print(f"Average ROUGE-L F1: {avg_rougeL:.4f}")
         print(f"Average BERTScore F1: {avg_bert:.4f}")
 
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump({
                 "results": results,
-                "average_rougeL_f1": avg_rouge,
+                "average_rouge1_f1": avg_rouge1,
+                "average_rouge2_f1": avg_rouge2,
+                "average_rougeL_f1": avg_rougeL,
                 "average_bert_f1": avg_bert
             }, f, indent=2)
-        return avg_rouge, avg_bert
+        return avg_rouge1, avg_rouge2, avg_rougeL, avg_bert
     
 if __name__ == "__main__":
 
     summarizer = Summarizer()
     summarizer.evaluate_on_all_articles()
+    

@@ -3,12 +3,18 @@ import requests
 import os 
 import google.generativeai as genai
 from google.generativeai.types import GenerationConfig
-
+from dotenv import load_dotenv
 from groq import Groq
+
+
+load_dotenv('.env')
+
+GROK_API_KEY = os.environ.get("GROK_API_KEY") 
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") 
 
 def groq_summarize_article(article_text,model,prompt):
     client = Groq(
-        api_key="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",
+        api_key=GROK_API_KEY,
     )
     chat_completion = client.chat.completions.create(
         messages=[
@@ -25,7 +31,7 @@ def groq_summarize_article(article_text,model,prompt):
     return summary
 
 def gemini_summarize_article(article_text,prompt):
-    genai.configure(api_key="AIzaSyC1OVCakG2ug2Bz5sKgJLTujr5mguPtHU0")
+    genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel(model_name="gemini-2.0-flash")
 
     response = model.generate_content(
@@ -37,24 +43,12 @@ def gemini_summarize_article(article_text,prompt):
     print("Summary:", summary)
     return summary
 
-with open('articles.json', 'r', encoding='utf-8') as f:
-    articles = json.load(f)
 
-article_key = "Long-2"
-article_text = articles.get(article_key)
+article_text =""" The corporate landscape is facing a barrage of negative headlines as new cases of financial misconduct and cybercrime emerge globally. In the UK, the Serious Fraud Office (SFO) has been particularly active, charging six individuals in a complex £75 million pension fraud case and freezing over £10,000 in cryptocurrency assets belonging to the CEO of Arena TV. These actions are part of a broader crackdown on sophisticated financial crimes, which has also seen a former Goldman Sachs analyst ordered to pay over half a million pounds for an insider trading conviction. In the U.S., a massive health care fraud takedown has uncovered schemes worth over a billion dollars in false claims, with numerous individuals facing charges for billing Medicare for unnecessary services.
 
+Adding to the turmoil, major companies and government agencies are battling a relentless onslaught of cyberattacks and data breaches. A recent report from IT Governance revealed that 14.9 million records were breached in July alone, with major incidents at companies like Allianz Life and Qantas. The breaches underscore a growing trend of third-party vendor compromises, where a security flaw in a smaller company's system can expose data from a much larger partner. This trend has made the supply chain a primary target for hackers.  In a particularly alarming case, a cyberattack on Iran's Bank Sepah resulted in the theft of 42 million customer records, and the U.S. government's TeleMessage app, used by officials, was breached, exposing metadata from over 60 accounts. These incidents highlight the increasing sophistication of criminal and state-sponsored hacking groups who are now targeting critical infrastructure and sensitive government communications.
+"""
 prompt_gemini = """Summarize the following article in a concise and informative paragraph. Focus on key events, important facts, and any significant conclusions.The paragraph should not exceed 100 words."""
-prompt_llama = """You are a helpful assistant. Please read the following article and write an abstractive summary. Focus on key events, major takeaways, and eliminate redundancy. The paragraph should not exceed 100 words."""
-prompt_gemma = """Summarize the following article in clear, concise and informative paragraph. Highlight the main points, important events, and key conclusions.The paragraph should not exceed 100 words."""
 
-print('-------llama-3.3-70b-versatile----------')
-groq_summarize_article(article_text, "llama-3.3-70b-versatile", prompt_llama)
-
-print("-------gemma2-9b-it----------")
-groq_summarize_article(article_text, "gemma2-9b-it",prompt_gemma)
-
-print('-------gemini-2.0-flash----------')
 gemini_summarize_article(article_text, prompt_gemini)
 
-print("-------------- Article -------------")
-print(article_text)
