@@ -1,0 +1,189 @@
+{
+  "classification_report": {
+    "DATE": {
+      "precision": 0.85,
+      "recall": 0.6538,
+      "f1-score": 0.7391,
+      "support": 27,
+      "pred_count": 20,
+      "correct": 17
+    },
+    "LAW": {
+      "precision": 0.9,
+      "recall": 0.7826,
+      "f1-score": 0.8372,
+      "support": 23,
+      "pred_count": 20,
+      "correct": 18
+    },
+    "LOC": {
+      "precision": 0.5283,
+      "recall": 0.875,
+      "f1-score": 0.6588,
+      "support": 32,
+      "pred_count": 53,
+      "correct": 28
+    },
+    "MONEY": {
+      "precision": 1.0,
+      "recall": 0.8636,
+      "f1-score": 0.9268,
+      "support": 22,
+      "pred_count": 19,
+      "correct": 19
+    },
+    "NATIONALITIES_RELIGIOUS_GROUPS": {
+      "precision": 0.8462,
+      "recall": 0.9565,
+      "f1-score": 0.898,
+      "support": 23,
+      "pred_count": 26,
+      "correct": 22
+    },
+    "ORG": {
+      "precision": 0.8947,
+      "recall": 0.8718,
+      "f1-score": 0.8831,
+      "support": 40,
+      "pred_count": 38,
+      "correct": 34
+    },
+    "PERCENT": {
+      "precision": 0.9524,
+      "recall": 1.0,
+      "f1-score": 0.9756,
+      "support": 20,
+      "pred_count": 21,
+      "correct": 20
+    },
+    "PERSON": {
+      "precision": 1.0,
+      "recall": 0.7241,
+      "f1-score": 0.84,
+      "support": 29,
+      "pred_count": 21,
+      "correct": 21
+    },
+    "TIME": {
+      "precision": 0.9412,
+      "recall": 0.7619,
+      "f1-score": 0.8421,
+      "support": 21,
+      "pred_count": 17,
+      "correct": 16
+    },
+    "WORK_OF_ART": {
+      "precision": 0.5152,
+      "recall": 0.85,
+      "f1-score": 0.6415,
+      "support": 20,
+      "pred_count": 33,
+      "correct": 17
+    },
+    "macro avg": {
+      "precision": 0.8428,
+      "recall": 0.8339,
+      "f1-score": 0.8242,
+      "support": 257
+    },
+    "weighted avg": {
+      "precision": 0.8402,
+      "recall": 0.8308,
+      "f1-score": 0.8212,
+      "support": 257
+    },
+    "accuracy": {
+      "precision": 0.791,
+      "recall": 0.791,
+      "f1-score": 0.791,
+      "support": 257
+    }
+  },
+  "confusion_matrix": {
+    "LOC": {
+      "LOC": 28,
+      "O": 4
+    },
+    "O": {
+      "ORG": 4,
+      "WORK_OF_ART": 12,
+      "LOC": 8,
+      "PERCENT": 1,
+      "LAW": 2,
+      "DATE": 2
+    },
+    "ORG": {
+      "O": 4,
+      "ORG": 34,
+      "WORK_OF_ART": 1,
+      "LOC": 2
+    },
+    "PERSON": {
+      "PERSON": 21,
+      "O": 8
+    },
+    "NATIONALITIES_RELIGIOUS_GROUPS": {
+      "NATIONALITIES_RELIGIOUS_GROUPS": 22,
+      "LOC": 16
+    },
+    "PERCENT": {
+      "PERCENT": 20,
+      "NATIONALITIES_RELIGIOUS_GROUPS": 4
+    },
+    "LAW": {
+      "LAW": 18,
+      "WORK_OF_ART": 6,
+      "O": 2
+    },
+    "MONEY": {
+      "MONEY": 19,
+      "O": 3
+    },
+    "WORK_OF_ART": {
+      "WORK_OF_ART": 17,
+      "O": 3
+    },
+    "DATE": {
+      "O": 8,
+      "DATE": 17,
+      "TIME": 2,
+      "LOC": 1
+    },
+    "TIME": {
+      "TIME": 16,
+      "O": 4,
+      "DATE": 2
+    }
+  },
+  "evaluation_metadata": {
+    "dataset_size": 98,
+    "evaluation_date": "2025-08-21T18:37:16.789783",
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "all_true_labels": [
+      "LAW",
+      "ORG",
+      "MONEY",
+      "PERSON",
+      "PERCENT",
+      "TECH",
+      "WORK_OF_ART",
+      "DATE",
+      "LOC",
+      "DISEASE",
+      "NATIONALITIES_RELIGIOUS_GROUPS",
+      "TIME"
+    ],
+    "all_pred_labels": [
+      "LAW",
+      "ORG",
+      "MONEY",
+      "PERSON",
+      "PERCENT",
+      "WORK_OF_ART",
+      "DATE",
+      "LOC",
+      "NATIONALITIES_RELIGIOUS_GROUPS",
+      "TIME"
+    ]
+  }
+}

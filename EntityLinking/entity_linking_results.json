@@ -1,0 +1,1457 @@
+{
+  "summary": {
+    "model_name": "sentence-transformers/all-mpnet-base-v2",
+    "accuracy": 0.7297297297297297,
+    "average_confidence": 0.6605169930878808,
+    "total_samples": 37,
+    "valid_samples": 37,
+    "correct_predictions": 27,
+    "total_time_seconds": 631.4550750255585,
+    "evaluation_timestamp": "2025-08-20 18:40:01"
+  },
+  "results": [
+    {
+      "sample_id": 1,
+      "mention": "Google",
+      "context": "Google's DeepMind division published a groundbreaking paper on AI in protein folding.",
+      "ground_truth_qid": "Q95",
+      "predicted_qid": "Q95",
+      "is_correct": true,
+      "score": 0.5537278711795807,
+      "top_k_predictions": [
+        {
+          "qid": "Q95",
+          "label": "Google",
+          "description": "American multinational technology company, a subsidiary of Alphabet Inc.",
+          "score": 0.5537278711795807,
+          "semantic_score": 0.42287978529930115,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q15733006",
+          "label": "Google DeepMind",
+          "description": "artificial intelligence company owned by Google",
+          "score": 0.5419342461086455,
+          "semantic_score": 0.5619539022445679,
+          "string_score": 0.5714285714285714,
+          "context_score": 0.3333333333333333
+        },
+        {
+          "qid": "Q22329209",
+          "label": "AlphaGo",
+          "description": "computer program developed by Google DeepMind to play the board game Go",
+          "score": 0.48772117177645363,
+          "semantic_score": 0.40175750851631165,
+          "string_score": 0.6,
+          "context_score": 0.6666666666666666
+        }
+      ],
+      "total_candidates": 12
+    },
+    {
+      "sample_id": 2,
+      "mention": "Tesla",
+      "context": "Tesla's recent price adjustments for the Model 3 in China have sparked debate among investors.",
+      "ground_truth_qid": "Q478214",
+      "predicted_qid": "Q124981765",
+      "is_correct": false,
+      "score": 0.6824579358100891,
+      "top_k_predictions": [
+        {
+          "qid": "Q124981765",
+          "label": "Tesla",
+          "description": "American brand of electric vehicles and batteries",
+          "score": 0.6824579358100891,
+          "semantic_score": 0.6374298930168152,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q478214",
+          "label": "Tesla, Inc.",
+          "description": "American automotive, energy storage and solar power company",
+          "score": 0.6364301919937134,
+          "semantic_score": 0.560716986656189,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q37251206",
+          "label": "Tesla",
+          "description": "family name",
+          "score": 0.5477655172348022,
+          "semantic_score": 0.4129425287246704,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 3,
+      "mention": "Nike",
+      "context": "Nike's 'Move to Zero' initiative has seen them incorporate recycled materials into their latest footwear lines.",
+      "ground_truth_qid": "Q483915",
+      "predicted_qid": "Q483915",
+      "is_correct": true,
+      "score": 0.64195876121521,
+      "top_k_predictions": [
+        {
+          "qid": "Q483915",
+          "label": "Nike",
+          "description": "American athletic equipment company",
+          "score": 0.64195876121521,
+          "semantic_score": 0.5699312686920166,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q266573",
+          "label": "Nike",
+          "description": "name",
+          "score": 0.6186451077461242,
+          "semantic_score": 0.5310751795768738,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q19810283",
+          "label": "Nike",
+          "description": "female given name",
+          "score": 0.5565891623497009,
+          "semantic_score": 0.4276486039161682,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 4,
+      "mention": "Amazon",
+      "context": "Amazon Web Services experienced a significant outage in its US-East-1 region, impacting numerous online services.",
+      "ground_truth_qid": "Q3884",
+      "predicted_qid": "Q3884",
+      "is_correct": true,
+      "score": 0.5467884957790374,
+      "top_k_predictions": [
+        {
+          "qid": "Q3884",
+          "label": "Amazon",
+          "description": "American multinational technology company",
+          "score": 0.5467884957790374,
+          "semantic_score": 0.4113141596317291,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q3783",
+          "label": "Amazon",
+          "description": "river in South America",
+          "score": 0.4796823263168335,
+          "semantic_score": 0.29947054386138916,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q4740856",
+          "label": "Amazon Prime Video",
+          "description": "American video streaming service",
+          "score": 0.4440966129302978,
+          "semantic_score": 0.4068276882171631,
+          "string_score": 0.6666666666666666,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 5,
+      "mention": "Nike",
+      "context": "Nike's 'Move to Zero' initiative has seen them incorporate recycled materials into their latest footwear lines.",
+      "ground_truth_qid": "Q483915",
+      "predicted_qid": "Q483915",
+      "is_correct": true,
+      "score": 0.64195876121521,
+      "top_k_predictions": [
+        {
+          "qid": "Q483915",
+          "label": "Nike",
+          "description": "American athletic equipment company",
+          "score": 0.64195876121521,
+          "semantic_score": 0.5699312686920166,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q266573",
+          "label": "Nike",
+          "description": "name",
+          "score": 0.6186451077461242,
+          "semantic_score": 0.5310751795768738,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q19810283",
+          "label": "Nike",
+          "description": "female given name",
+          "score": 0.5565891623497009,
+          "semantic_score": 0.4276486039161682,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 6,
+      "mention": "Amazon",
+      "context": "Amazon Web Services experienced a significant outage in its US-East-1 region, impacting numerous online services.",
+      "ground_truth_qid": "Q3884",
+      "predicted_qid": "Q3884",
+      "is_correct": true,
+      "score": 0.5467884957790374,
+      "top_k_predictions": [
+        {
+          "qid": "Q3884",
+          "label": "Amazon",
+          "description": "American multinational technology company",
+          "score": 0.5467884957790374,
+          "semantic_score": 0.4113141596317291,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q3783",
+          "label": "Amazon",
+          "description": "river in South America",
+          "score": 0.4796823263168335,
+          "semantic_score": 0.29947054386138916,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q4740856",
+          "label": "Amazon Prime Video",
+          "description": "American video streaming service",
+          "score": 0.4440966129302978,
+          "semantic_score": 0.4068276882171631,
+          "string_score": 0.6666666666666666,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 7,
+      "mention": "Meta",
+      "context": "Meta unveiled a new open-source large language model, LLaMA 3, aimed at academic and enterprise use cases.",
+      "ground_truth_qid": "Q380",
+      "predicted_qid": "Q380",
+      "is_correct": true,
+      "score": 0.5418906033039093,
+      "top_k_predictions": [
+        {
+          "qid": "Q380",
+          "label": "Meta",
+          "description": "American multinational technology corporation",
+          "score": 0.5418906033039093,
+          "semantic_score": 0.4031510055065155,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q238629",
+          "label": "Meta Department",
+          "description": "department of Colombia",
+          "score": 0.49173985719680785,
+          "semantic_score": 0.31956642866134644,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q12796400",
+          "label": "Meta",
+          "description": "female given name",
+          "score": 0.4706419587135315,
+          "semantic_score": 0.2844032645225525,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 8,
+      "mention": "OpenAI",
+      "context": "OpenAI introduced 'memory' in ChatGPT, allowing it to retain context across sessions for more personalized interactions.",
+      "ground_truth_qid": "Q21708200",
+      "predicted_qid": "Q124605186",
+      "is_correct": false,
+      "score": 0.6607566118240356,
+      "top_k_predictions": [
+        {
+          "qid": "Q124605186",
+          "label": "OpenAI",
+          "description": "artificial intelligence company, onwer and operator of ChatGPT, ChatGPT Enterprise and OpenAI’s API tools",
+          "score": 0.6607566118240356,
+          "semantic_score": 0.6012610197067261,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q21708200",
+          "label": "OpenAI",
+          "description": "American artificial intelligence research organization",
+          "score": 0.6414464950561523,
+          "semantic_score": 0.5690774917602539,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q116374474",
+          "label": "OpenAI OpCo",
+          "description": "artificial intelligence company, for-profit subsidiary of OpenAI Incorporated",
+          "score": 0.5392370065053304,
+          "semantic_score": 0.3431727886199951,
+          "string_score": 1.0,
+          "context_score": 0.3333333333333333
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 9,
+      "mention": "Apple",
+      "context": "Apple launched a self-repair program, enabling users to order genuine parts and tools to repair their iPhones and MacBooks at home.",
+      "ground_truth_qid": "Q312",
+      "predicted_qid": "Q111046003",
+      "is_correct": false,
+      "score": 0.5385505755742391,
+      "top_k_predictions": [
+        {
+          "qid": "Q111046003",
+          "label": "Apple",
+          "description": "registered trademark owned by Apple",
+          "score": 0.5385505755742391,
+          "semantic_score": 0.34202873706817627,
+          "string_score": 1.0,
+          "context_score": 0.3333333333333333
+        },
+        {
+          "qid": "Q213710",
+          "label": "Apple Records",
+          "description": "UK record label",
+          "score": 0.46523244380950923,
+          "semantic_score": 0.27538740634918213,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q26944931",
+          "label": "Apple",
+          "description": "unisex given name",
+          "score": 0.45346006751060486,
+          "semantic_score": 0.25576677918434143,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 10,
+      "mention": "OpenAI",
+      "context": "OpenAI introduced 'memory' in ChatGPT, allowing it to retain context across sessions for more personalized interactions.",
+      "ground_truth_qid": "Q21708200",
+      "predicted_qid": "Q124605186",
+      "is_correct": false,
+      "score": 0.6607566118240356,
+      "top_k_predictions": [
+        {
+          "qid": "Q124605186",
+          "label": "OpenAI",
+          "description": "artificial intelligence company, onwer and operator of ChatGPT, ChatGPT Enterprise and OpenAI’s API tools",
+          "score": 0.6607566118240356,
+          "semantic_score": 0.6012610197067261,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q21708200",
+          "label": "OpenAI",
+          "description": "American artificial intelligence research organization",
+          "score": 0.6414464950561523,
+          "semantic_score": 0.5690774917602539,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q116374474",
+          "label": "OpenAI OpCo",
+          "description": "artificial intelligence company, for-profit subsidiary of OpenAI Incorporated",
+          "score": 0.5392370065053304,
+          "semantic_score": 0.3431727886199951,
+          "string_score": 1.0,
+          "context_score": 0.3333333333333333
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 11,
+      "mention": "Meta",
+      "context": "Meta unveiled a new open-source large language model, LLaMA 3, aimed at academic and enterprise use cases.",
+      "ground_truth_qid": "Q380",
+      "predicted_qid": "Q380",
+      "is_correct": true,
+      "score": 0.5418906033039093,
+      "top_k_predictions": [
+        {
+          "qid": "Q380",
+          "label": "Meta",
+          "description": "American multinational technology corporation",
+          "score": 0.5418906033039093,
+          "semantic_score": 0.4031510055065155,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q238629",
+          "label": "Meta Department",
+          "description": "department of Colombia",
+          "score": 0.49173985719680785,
+          "semantic_score": 0.31956642866134644,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q12796400",
+          "label": "Meta",
+          "description": "female given name",
+          "score": 0.4706419587135315,
+          "semantic_score": 0.2844032645225525,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 12,
+      "mention": "Apple",
+      "context": "Apple launched a self-repair program, enabling users to order genuine parts and tools to repair their iPhones and MacBooks at home.",
+      "ground_truth_qid": "Q312",
+      "predicted_qid": "Q111046003",
+      "is_correct": false,
+      "score": 0.5385505755742391,
+      "top_k_predictions": [
+        {
+          "qid": "Q111046003",
+          "label": "Apple",
+          "description": "registered trademark owned by Apple",
+          "score": 0.5385505755742391,
+          "semantic_score": 0.34202873706817627,
+          "string_score": 1.0,
+          "context_score": 0.3333333333333333
+        },
+        {
+          "qid": "Q213710",
+          "label": "Apple Records",
+          "description": "UK record label",
+          "score": 0.46523244380950923,
+          "semantic_score": 0.27538740634918213,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q26944931",
+          "label": "Apple",
+          "description": "unisex given name",
+          "score": 0.45346006751060486,
+          "semantic_score": 0.25576677918434143,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 13,
+      "mention": "Microsoft",
+      "context": "Microsoft integrated Copilot AI across its Office 365 suite, enhancing productivity with generative AI suggestions.",
+      "ground_truth_qid": "Q2283",
+      "predicted_qid": "Q2283",
+      "is_correct": true,
+      "score": 0.5637931466102599,
+      "top_k_predictions": [
+        {
+          "qid": "Q2283",
+          "label": "Microsoft",
+          "description": "American multinational technology corporation",
+          "score": 0.5637931466102599,
+          "semantic_score": 0.43965524435043335,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q11272",
+          "label": "Microsoft Excel",
+          "description": "spreadsheet editor, part of Microsoft 365",
+          "score": 0.4735155006249745,
+          "semantic_score": 0.3586369454860687,
+          "string_score": 0.75,
+          "context_score": 0.3333333333333333
+        },
+        {
+          "qid": "Q132020",
+          "label": "Xbox",
+          "description": "video game console by Microsoft",
+          "score": 0.4637838585653167,
+          "semantic_score": 0.32611319422721863,
+          "string_score": 0.782608695652174,
+          "context_score": 0.3333333333333333
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 14,
+      "mention": "SpaceX",
+      "context": "SpaceX successfully tested its Starship launch system with full re-entry and ocean splashdown, a key milestone in its Mars program.",
+      "ground_truth_qid": "Q193701",
+      "predicted_qid": "Q193701",
+      "is_correct": true,
+      "score": 0.5648550152778625,
+      "top_k_predictions": [
+        {
+          "qid": "Q193701",
+          "label": "SpaceX",
+          "description": "American private aerospace company",
+          "score": 0.5648550152778625,
+          "semantic_score": 0.44142502546310425,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q7572748",
+          "label": "Spacex",
+          "description": "contemporary art gallery in Devon, England",
+          "score": 0.5247004687786102,
+          "semantic_score": 0.3745007812976837,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q47246047",
+          "label": "Crew Dragon Demo-2",
+          "description": "crewed demonstration flight operated by SpaceX on behalf of NASA",
+          "score": 0.5092200910835936,
+          "semantic_score": 0.47735512256622314,
+          "string_score": 0.631578947368421,
+          "context_score": 0.3333333333333333
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 15,
+      "mention": "Netflix",
+      "context": "Netflix expanded its ad-supported tier and announced partnerships with global brands to diversify its revenue streams.",
+      "ground_truth_qid": "Q907311",
+      "predicted_qid": "Q907311",
+      "is_correct": true,
+      "score": 0.6443117022514343,
+      "top_k_predictions": [
+        {
+          "qid": "Q907311",
+          "label": "Netflix",
+          "description": "American subscription video on-demand over-the-top streaming service",
+          "score": 0.6443117022514343,
+          "semantic_score": 0.5738528370857239,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q116452644",
+          "label": "Netflix, Inc.",
+          "description": "American media company",
+          "score": 0.581004867553711,
+          "semantic_score": 0.6183414459228516,
+          "string_score": 0.7,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q17062718",
+          "label": "Netflix",
+          "description": "song by American rapper 2 Chainz",
+          "score": 0.5039916694164276,
+          "semantic_score": 0.339986115694046,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 16,
+      "mention": "Eleven",
+      "context": "Eleven is a fictional character from the Netflix series Stranger Things.",
+      "ground_truth_qid": "Q27955792",
+      "predicted_qid": "Q27955792",
+      "is_correct": true,
+      "score": 0.8929725805918376,
+      "top_k_predictions": [
+        {
+          "qid": "Q27955792",
+          "label": "Eleven",
+          "description": "fictional character from Netflix series Stranger Things",
+          "score": 0.8929725805918376,
+          "semantic_score": 0.8771765232086182,
+          "string_score": 1.0,
+          "context_score": 0.6666666666666666
+        },
+        {
+          "qid": "Q130341528",
+          "label": "Eleven",
+          "description": "song by C418",
+          "score": 0.6713261604309082,
+          "semantic_score": 0.6188769340515137,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q3280400",
+          "label": "Eleven",
+          "description": "album by B'z",
+          "score": 0.6024836897850037,
+          "semantic_score": 0.5041394829750061,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 17,
+      "mention": "Amazon",
+      "context": "The Amazon forest, often referred to as the lungs of the Earth, plays a vital role in regulating the planet's climate and biodiversity",
+      "ground_truth_qid": "Q177567",
+      "predicted_qid": "Q3783",
+      "is_correct": false,
+      "score": 0.6525006294250488,
+      "top_k_predictions": [
+        {
+          "qid": "Q3783",
+          "label": "Amazon",
+          "description": "river in South America",
+          "score": 0.6525006294250488,
+          "semantic_score": 0.587501049041748,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q177567",
+          "label": "Amazon rainforest",
+          "description": "large rainforest in South America",
+          "score": 0.5992334399904523,
+          "semantic_score": 0.5701509714126587,
+          "string_score": 0.8571428571428571,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q58947750",
+          "label": "Amazon Forest",
+          "description": "scientific article published in Nature",
+          "score": 0.5868863300273293,
+          "semantic_score": 0.6623544096946716,
+          "string_score": 0.631578947368421,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 11
+    },
+    {
+      "sample_id": 18,
+      "mention": "Twelve",
+      "context": "Twelve is a significant number in various cultures and religions.",
+      "ground_truth_qid": "Q36977",
+      "predicted_qid": "Q36977",
+      "is_correct": true,
+      "score": 0.6917422612508138,
+      "top_k_predictions": [
+        {
+          "qid": "Q36977",
+          "label": "12",
+          "description": "natural number",
+          "score": 0.6917422612508138,
+          "semantic_score": 0.5973482131958008,
+          "string_score": 1.0,
+          "context_score": 0.3333333333333333
+        },
+        {
+          "qid": "Q98831745",
+          "label": "Twelve",
+          "description": "2020 studio album by Iz*One",
+          "score": 0.5655199885368347,
+          "semantic_score": 0.44253331422805786,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q1576744",
+          "label": "Twelve",
+          "description": "2010 film by Joel Schumacher",
+          "score": 0.5590959906578064,
+          "semantic_score": 0.431826651096344,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 19,
+      "mention": "Jaguar",
+      "context": "The jaguar prowls through the dense rainforests of Central and South America.",
+      "ground_truth_qid": "Q35694",
+      "predicted_qid": "Q35694",
+      "is_correct": true,
+      "score": 0.7484056949615479,
+      "top_k_predictions": [
+        {
+          "qid": "Q35694",
+          "label": "jaguar",
+          "description": "species of big cat native to the Americas",
+          "score": 0.7484056949615479,
+          "semantic_score": 0.7473428249359131,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q21170490",
+          "label": "Jaguar",
+          "description": "British car marque used by Jaguar Land Rover",
+          "score": 0.6105737169583638,
+          "semantic_score": 0.46206730604171753,
+          "string_score": 1.0,
+          "context_score": 0.3333333333333333
+        },
+        {
+          "qid": "Q11859320",
+          "label": "Jaguar",
+          "description": "1923 Chacal-class destroyer",
+          "score": 0.567735242843628,
+          "semantic_score": 0.4462254047393799,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 20,
+      "mention": "Jaguar",
+      "context": "Jaguar's latest electric SUV, the I-PACE, represents a bold step in the auto industry's green transition.",
+      "ground_truth_qid": "Q30055",
+      "predicted_qid": "Q21170490",
+      "is_correct": false,
+      "score": 0.6695659359296163,
+      "top_k_predictions": [
+        {
+          "qid": "Q21170490",
+          "label": "Jaguar",
+          "description": "British car marque used by Jaguar Land Rover",
+          "score": 0.6695659359296163,
+          "semantic_score": 0.5603876709938049,
+          "string_score": 1.0,
+          "context_score": 0.3333333333333333
+        },
+        {
+          "qid": "Q30055",
+          "label": "Jaguar Cars",
+          "description": "former British car company",
+          "score": 0.6455002069473266,
+          "semantic_score": 0.5758336782455444,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q2732887",
+          "label": "Jaguar",
+          "description": "1928 Type 24 torpedo boat",
+          "score": 0.4954033434391022,
+          "semantic_score": 0.3256722390651703,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 21,
+      "mention": "Python",
+      "context": "Python has become one of the most popular programming languages for AI and machine learning.",
+      "ground_truth_qid": "Q28865",
+      "predicted_qid": "Q28865",
+      "is_correct": true,
+      "score": 0.7175587892532349,
+      "top_k_predictions": [
+        {
+          "qid": "Q28865",
+          "label": "Python",
+          "description": "general-purpose programming language",
+          "score": 0.7175587892532349,
+          "semantic_score": 0.6959313154220581,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q76417859",
+          "label": "Python",
+          "description": "family name",
+          "score": 0.4848028063774109,
+          "semantic_score": 0.3080046772956848,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q29642950",
+          "label": "Python package",
+          "description": "software library for the Python programming language",
+          "score": 0.45578183291251195,
+          "semantic_score": 0.3882913589477539,
+          "string_score": 0.631578947368421,
+          "context_score": 0.3333333333333333
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 22,
+      "mention": "Python",
+      "context": "The python wrapped itself around the tree, motionless as it waited for its prey.",
+      "ground_truth_qid": "Q184018",
+      "predicted_qid": "Q271218",
+      "is_correct": false,
+      "score": 0.6100594639778136,
+      "top_k_predictions": [
+        {
+          "qid": "Q271218",
+          "label": "Python",
+          "description": "genus of reptiles",
+          "score": 0.6100594639778136,
+          "semantic_score": 0.5167657732963562,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q184018",
+          "label": "pythons",
+          "description": "family of snakes",
+          "score": 0.5939767406536982,
+          "semantic_score": 0.5284227728843689,
+          "string_score": 0.9230769230769231,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q76417859",
+          "label": "Python",
+          "description": "family name",
+          "score": 0.5264724969863892,
+          "semantic_score": 0.37745416164398193,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 23,
+      "mention": "Mercury",
+      "context": "Mercury is the smallest planet in our solar system and closest to the Sun.",
+      "ground_truth_qid": "Q308",
+      "predicted_qid": "Q308",
+      "is_correct": true,
+      "score": 0.9067195812861124,
+      "top_k_predictions": [
+        {
+          "qid": "Q308",
+          "label": "Mercury",
+          "description": "smallest and closest planet to the sun in the Solar System",
+          "score": 0.9067195812861124,
+          "semantic_score": 0.9000881910324097,
+          "string_score": 1.0,
+          "context_score": 0.6666666666666666
+        },
+        {
+          "qid": "Q107119712",
+          "label": "Mercury",
+          "description": "",
+          "score": 0.639942741394043,
+          "semantic_score": 0.5665712356567383,
+          "string_score": 1.0,
+          "context_score": 0
+        },
+        {
+          "qid": "Q925",
+          "label": "mercury",
+          "description": "chemical element with symbol Hg and atomic number 80",
+          "score": 0.6100268840789795,
+          "semantic_score": 0.5167114734649658,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 24,
+      "mention": "Mercury",
+      "context": "Mercury was widely used in thermometers before its toxicity became known.",
+      "ground_truth_qid": "Q925",
+      "predicted_qid": "Q925",
+      "is_correct": true,
+      "score": 0.6277286052703857,
+      "top_k_predictions": [
+        {
+          "qid": "Q925",
+          "label": "mercury",
+          "description": "chemical element with symbol Hg and atomic number 80",
+          "score": 0.6277286052703857,
+          "semantic_score": 0.5462143421173096,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q107119712",
+          "label": "Mercury",
+          "description": "",
+          "score": 0.5794373631477356,
+          "semantic_score": 0.4657289385795593,
+          "string_score": 1.0,
+          "context_score": 0
+        },
+        {
+          "qid": "Q60009810",
+          "label": "Mercury",
+          "description": "male given name",
+          "score": 0.5425817370414734,
+          "semantic_score": 0.4043028950691223,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 25,
+      "mention": "Mercury",
+      "context": "Freddie Mercury's voice and stage presence made Queen one of the most iconic rock bands in history.",
+      "ground_truth_qid": "Q60009810",
+      "predicted_qid": "Q60009810",
+      "is_correct": true,
+      "score": 0.5378324568271637,
+      "top_k_predictions": [
+        {
+          "qid": "Q60009810",
+          "label": "Mercury",
+          "description": "male given name",
+          "score": 0.5378324568271637,
+          "semantic_score": 0.3963874280452728,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q1150",
+          "label": "Mercury",
+          "description": "Roman god of trade, merchants and travel",
+          "score": 0.5135186433792114,
+          "semantic_score": 0.35586440563201904,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q613883",
+          "label": "Mercury",
+          "description": "automobile marque of the Ford Motor Company",
+          "score": 0.493112576007843,
+          "semantic_score": 0.32185429334640503,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 26,
+      "mention": "Java",
+      "context": "Java is an island of Indonesia known for its volcanoes and cultural heritage.",
+      "ground_truth_qid": "Q3757",
+      "predicted_qid": "Q3757",
+      "is_correct": true,
+      "score": 0.8725278536478678,
+      "top_k_predictions": [
+        {
+          "qid": "Q3757",
+          "label": "Java",
+          "description": "island of Indonesia",
+          "score": 0.8725278536478678,
+          "semantic_score": 0.843101978302002,
+          "string_score": 1.0,
+          "context_score": 0.6666666666666666
+        },
+        {
+          "qid": "Q61612399",
+          "label": "Java",
+          "description": "genus of insects",
+          "score": 0.5837753534317016,
+          "semantic_score": 0.47295892238616943,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q251",
+          "label": "Java",
+          "description": "object-oriented programming language",
+          "score": 0.5772912740707397,
+          "semantic_score": 0.4621521234512329,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 27,
+      "mention": "Java",
+      "context": "Java remains a dominant programming language in enterprise software development.",
+      "ground_truth_qid": "Q251",
+      "predicted_qid": "Q251",
+      "is_correct": true,
+      "score": 0.6407836675643921,
+      "top_k_predictions": [
+        {
+          "qid": "Q251",
+          "label": "Java",
+          "description": "object-oriented programming language",
+          "score": 0.6407836675643921,
+          "semantic_score": 0.5679727792739868,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q37270782",
+          "label": "Java",
+          "description": "family name",
+          "score": 0.44964156746864314,
+          "semantic_score": 0.24940261244773865,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q2005",
+          "label": "JavaScript",
+          "description": "high-level programming language",
+          "score": 0.43811385461262287,
+          "semantic_score": 0.4444754719734192,
+          "string_score": 0.5714285714285714,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 28,
+      "mention": "Apollo",
+      "context": "Apollo 11 was the first mission to land humans on the Moon.",
+      "ground_truth_qid": "Q46611",
+      "predicted_qid": "Q46611",
+      "is_correct": true,
+      "score": 0.672288680076599,
+      "top_k_predictions": [
+        {
+          "qid": "Q46611",
+          "label": "Apollo space program",
+          "description": "1961–1972 American human spaceflight program",
+          "score": 0.672288680076599,
+          "semantic_score": 0.6204811334609985,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q665812",
+          "label": "Apollo",
+          "description": "male given name",
+          "score": 0.5705901861190796,
+          "semantic_score": 0.4509836435317993,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q5634132",
+          "label": "HMS Royal Scotsman",
+          "description": "1936 ferry converted to infantry landing ship",
+          "score": 0.5342147469520568,
+          "semantic_score": 0.3903579115867615,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 29,
+      "mention": "Paris",
+      "context": "Paris is hosting the next Summer Olympic Games, drawing global attention to its infrastructure and urban planning.",
+      "ground_truth_qid": "Q90",
+      "predicted_qid": "Q90",
+      "is_correct": true,
+      "score": 0.6871759057044983,
+      "top_k_predictions": [
+        {
+          "qid": "Q90",
+          "label": "Paris",
+          "description": "capital city and largest city of France",
+          "score": 0.6871759057044983,
+          "semantic_score": 0.6452931761741638,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q483020",
+          "label": "Paris Saint-Germain FC",
+          "description": "association football club in Paris, France",
+          "score": 0.515809178352356,
+          "semantic_score": 0.35968196392059326,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q18331346",
+          "label": "Paris",
+          "description": "family name",
+          "score": 0.512582802772522,
+          "semantic_score": 0.3543046712875366,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 30,
+      "mention": "Paris",
+      "context": "Paris Hilton has launched a new skincare line targeting Gen Z consumers.",
+      "ground_truth_qid": "Q47899",
+      "predicted_qid": "Q18331346",
+      "is_correct": false,
+      "score": 0.5194399952888489,
+      "top_k_predictions": [
+        {
+          "qid": "Q18331346",
+          "label": "Paris",
+          "description": "family name",
+          "score": 0.5194399952888489,
+          "semantic_score": 0.3657333254814148,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q47899",
+          "label": "Paris Hilton",
+          "description": "American media personality (born 1981)",
+          "score": 0.5137171373647802,
+          "semantic_score": 0.5620775818824768,
+          "string_score": 0.5882352941176471,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q10752136",
+          "label": "Paris Hilton",
+          "description": "perfume",
+          "score": 0.5129723773283117,
+          "semantic_score": 0.5608363151550293,
+          "string_score": 0.5882352941176471,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 12
+    },
+    {
+      "sample_id": 31,
+      "mention": "Titan",
+      "context": "Titan, Saturn’s largest moon, has a thick atmosphere and lakes of liquid methane.",
+      "ground_truth_qid": "Q2565",
+      "predicted_qid": "Q2565",
+      "is_correct": true,
+      "score": 0.8546122352282206,
+      "top_k_predictions": [
+        {
+          "qid": "Q2565",
+          "label": "Titan",
+          "description": "largest moon of Saturn",
+          "score": 0.8546122352282206,
+          "semantic_score": 0.8132426142692566,
+          "string_score": 1.0,
+          "context_score": 0.6666666666666666
+        },
+        {
+          "qid": "Q21447844",
+          "label": "Titan",
+          "description": "genus of insects",
+          "score": 0.589844673871994,
+          "semantic_score": 0.48307445645332336,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q45713",
+          "label": "titan",
+          "description": "members of the second order of divine beings in Greek mythology",
+          "score": 0.5100663542747498,
+          "semantic_score": 0.35011059045791626,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 32,
+      "mention": "Windows",
+      "context": "The cathedral’s stained glass windows depicted scenes from biblical stories.",
+      "ground_truth_qid": "Q35473",
+      "predicted_qid": "Q35473",
+      "is_correct": true,
+      "score": 0.5071086108684539,
+      "top_k_predictions": [
+        {
+          "qid": "Q35473",
+          "label": "window",
+          "description": "opening to admit light or air",
+          "score": 0.5071086108684539,
+          "semantic_score": 0.34518101811408997,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q89927350",
+          "label": "Windows",
+          "description": "U.S. rock band",
+          "score": 0.4076688766479492,
+          "semantic_score": 0.17944812774658203,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q37560383",
+          "label": "Windows",
+          "description": "family name",
+          "score": 0.39448689222335814,
+          "semantic_score": 0.15747815370559692,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 33,
+      "mention": "Lincoln",
+      "context": "Lincoln gave the Gettysburg Address during the American Civil War.",
+      "ground_truth_qid": "Q91",
+      "predicted_qid": "Q91",
+      "is_correct": true,
+      "score": 0.6856425551807179,
+      "top_k_predictions": [
+        {
+          "qid": "Q91",
+          "label": "Abraham Lincoln",
+          "description": "President of the United States from 1861 to 1865",
+          "score": 0.6856425551807179,
+          "semantic_score": 0.7309728860855103,
+          "string_score": 0.8235294117647058,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q18610168",
+          "label": "Lincoln",
+          "description": "family name",
+          "score": 0.6253929734230042,
+          "semantic_score": 0.5423216223716736,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q18610169",
+          "label": "Lincoln",
+          "description": "male given name",
+          "score": 0.620063066482544,
+          "semantic_score": 0.5334384441375732,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 34,
+      "mention": "Lincoln",
+      "context": "Lincoln is a historic city in the East Midlands of England, known for its medieval cathedral.",
+      "ground_truth_qid": "Q180057",
+      "predicted_qid": "Q28260",
+      "is_correct": false,
+      "score": 0.761201818784078,
+      "top_k_predictions": [
+        {
+          "qid": "Q28260",
+          "label": "Lincoln",
+          "description": "city in and the county seat of Lancaster County, Nebraska, United States, that is also the state capital",
+          "score": 0.761201818784078,
+          "semantic_score": 0.7131141424179077,
+          "string_score": 1.0,
+          "context_score": 0.3333333333333333
+        },
+        {
+          "qid": "Q18519",
+          "label": "Lincoln City F.C.",
+          "description": "association football club in Lincoln, England",
+          "score": 0.7142719030380249,
+          "semantic_score": 0.6904531717300415,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q18610168",
+          "label": "Lincoln",
+          "description": "family name",
+          "score": 0.653836727142334,
+          "semantic_score": 0.5897278785705566,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 12
+    },
+    {
+      "sample_id": 35,
+      "mention": "Falcon",
+      "context": "The falcon soared high above the canyon, its keen eyes scanning for prey.",
+      "ground_truth_qid": "Q43489",
+      "predicted_qid": "Q43489",
+      "is_correct": true,
+      "score": 0.6380575060844421,
+      "top_k_predictions": [
+        {
+          "qid": "Q43489",
+          "label": "falcon",
+          "description": "genus of birds",
+          "score": 0.6380575060844421,
+          "semantic_score": 0.5634291768074036,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q7884398",
+          "label": "Falcon",
+          "description": "family name",
+          "score": 0.6253126859664917,
+          "semantic_score": 0.5421878099441528,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q98776958",
+          "label": "Falcon",
+          "description": "male given name",
+          "score": 0.6170508384704589,
+          "semantic_score": 0.5284180641174316,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 36,
+      "mention": "Oracle",
+      "context": "Oracle released its latest quarterly earnings, showing growth in its cloud infrastructure segment.",
+      "ground_truth_qid": "Q19900",
+      "predicted_qid": "Q19900",
+      "is_correct": true,
+      "score": 0.6630323052406311,
+      "top_k_predictions": [
+        {
+          "qid": "Q19900",
+          "label": "Oracle",
+          "description": "American multinational computer corporation",
+          "score": 0.6630323052406311,
+          "semantic_score": 0.6050538420677185,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q185524",
+          "label": "Oracle Database",
+          "description": "proprietary database management system",
+          "score": 0.5955119490623474,
+          "semantic_score": 0.49251991510391235,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q124068573",
+          "label": "Oracle",
+          "description": "2017 video game",
+          "score": 0.582555627822876,
+          "semantic_score": 0.47092604637145996,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    },
+    {
+      "sample_id": 37,
+      "mention": "Oracle",
+      "context": "In ancient Greece, people would consult the Oracle at Delphi for guidance from the gods.",
+      "ground_truth_qid": "Q217123",
+      "predicted_qid": "Q217123",
+      "is_correct": true,
+      "score": 0.7018060684204102,
+      "top_k_predictions": [
+        {
+          "qid": "Q217123",
+          "label": "oracle",
+          "description": "in classical antiquity, person or agency considered to provide wise and insightful counsel or prophetic predictions or precognition of the future",
+          "score": 0.7018060684204102,
+          "semantic_score": 0.6696767807006836,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q19900",
+          "label": "Oracle",
+          "description": "American multinational computer corporation",
+          "score": 0.5380799889564514,
+          "semantic_score": 0.3967999815940857,
+          "string_score": 1.0,
+          "context_score": 0.0
+        },
+        {
+          "qid": "Q194705",
+          "label": "Barbara Gordon",
+          "description": "DC Comics character",
+          "score": 0.5167327165603638,
+          "semantic_score": 0.36122119426727295,
+          "string_score": 1.0,
+          "context_score": 0.0
+        }
+      ],
+      "total_candidates": 7
+    }
+  ]
+}

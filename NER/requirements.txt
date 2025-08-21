@@ -1,9 +1,28 @@
-transformers>=4.30.0
-accelerate>=0.21.0
-bitsandbytes>=0.39.0
-scipy>=1.10.0
-json_repair>=0.2.6
-torch>=2.0.0
-pydantic>=1.10.7
-scikit-learn>=1.2.2
-google-colab>=1.0.0
+# Web server
+fastapi==0.116.1
+uvicorn[standard]==0.30.6    # Updated to latest compatible version
+pyngrok==7.3.0
+nest-asyncio==1.6.0
+python-dotenv==1.1.1
+
+# Transformers & ML
+transformers==4.46.2         # Updated to latest stable version
+tokenizers==0.20.4           # Updated to match transformers version
+accelerate==1.2.1            # Fixed version compatibility
+bitsandbytes==0.45.0         # Compatible with current torch
+torch==2.5.1                 # Stable version with good support
+torchaudio==2.5.1            # Matching torch version
+torchvision==0.20.1          # Matching torch version
+
+# Scientific computing
+numpy==1.26.4                # More stable version for ML workloads
+scipy==1.13.1               # Compatible with numpy and other deps
+pandas==2.2.3               # Updated patch version
+
+# JSON repair
+json_repair==0.50.0
+
+# Security & HTTP
+cryptography>=43.0.3
+requests>=2.32.4
+urllib3>=2.5.0

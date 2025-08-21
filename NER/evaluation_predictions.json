@@ -1,0 +1,2389 @@
+[
+  {
+    "text": "Apple Inc. is headquartered in Cupertino, California, and has revolutionized the tech industry with its innovations.",
+    "true_entities": [
+      {
+        "text": "Apple Inc.",
+        "label": "ORG"
+      },
+      {
+        "text": "Cupertino",
+        "label": "LOC"
+      },
+      {
+        "text": "California",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Apple Inc"
+      ],
+      "LOC": [
+        "Cupertino",
+        "California"
+      ]
+    },
+    "sample_id": 0
+  },
+  {
+    "text": "John is an American who speaks English fluently, while Maria is a Spanish speaker from Spain. They both enjoy traveling and learning new languages.",
+    "true_entities": [
+      {
+        "text": "John",
+        "label": "PERSON"
+      },
+      {
+        "text": "American",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "Maria",
+        "label": "PERSON"
+      },
+      {
+        "text": "Spanish",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "Spain",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "John",
+        "Maria"
+      ],
+      "LOC": [
+        "Spain"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "American",
+        "Spanish"
+      ]
+    },
+    "sample_id": 1
+  },
+  {
+    "text": "The Space Needle in Seattle and Alcatraz Island are popular tourist destinations.",
+    "true_entities": [
+      {
+        "text": "Alcatraz Island",
+        "label": "LOC"
+      },
+      {
+        "text": "Seattle",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Seattle",
+        "Alcatraz Island"
+      ]
+    },
+    "sample_id": 2
+  },
+  {
+    "text": "The Colosseum in Rome and the Taj Mahal in India are UNESCO World Heritage Sites.",
+    "true_entities": [
+      {
+        "text": "Rome",
+        "label": "LOC"
+      },
+      {
+        "text": "India",
+        "label": "LOC"
+      },
+      {
+        "text": "UNESCO",
+        "label": "ORG"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "UNESCO"
+      ],
+      "LOC": [
+        "Rome",
+        "India"
+      ],
+      "WORK_OF_ART": [
+        "Taj Mahal"
+      ]
+    },
+    "sample_id": 3
+  },
+  {
+    "text": "The tax rate for high earners will increase from 35% to 39.6 percent starting next fiscal year.",
+    "true_entities": [
+      {
+        "text": "35%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "39.6 percent",
+        "label": "PERCENT"
+      }
+    ],
+    "predicted_entities": {
+      "PERCENT": [
+        "35%",
+        "39.6 percent"
+      ]
+    },
+    "sample_id": 4
+  },
+  {
+    "text": "The Korean and Vietnamese communities have grown significantly in this multicultural neighborhood.",
+    "true_entities": [
+      {
+        "text": "Korean",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "Vietnamese",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Korean",
+        "Vietnamese"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "Korean",
+        "Vietnamese"
+      ]
+    },
+    "sample_id": 5
+  },
+  {
+    "text": "The Sarbanes-Oxley Act requires public companies to maintain accurate financial records, while the Clean Air Act regulates emissions.",
+    "true_entities": [
+      {
+        "text": "Sarbanes-Oxley Act",
+        "label": "LAW"
+      },
+      {
+        "text": "Clean Air Act",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "LAW": [
+        "Sarbanes-Oxley Act",
+        "Clean Air Act"
+      ]
+    },
+    "sample_id": 6
+  },
+  {
+    "text": "Elon Musk founded SpaceX and Tesla. He is also known for his work with Tesla, the electric vehicle company.",
+    "true_entities": [
+      {
+        "text": "Elon Musk",
+        "label": "PERSON"
+      },
+      {
+        "text": "SpaceX",
+        "label": "ORG"
+      },
+      {
+        "text": "Tesla",
+        "label": "ORG"
+      },
+      {
+        "text": "Tesla",
+        "label": "ORG"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Elon Musk"
+      ],
+      "ORG": [
+        "SpaceX",
+        "Tesla"
+      ],
+      "WORK_OF_ART": [
+        "Tesla"
+      ]
+    },
+    "sample_id": 7
+  },
+  {
+    "text": "The annual bonus was €567,000 while the performance incentive reached $1.9 million this quarter.",
+    "true_entities": [
+      {
+        "text": "€567,000",
+        "label": "MONEY"
+      },
+      {
+        "text": "$1.9 million",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {
+      "MONEY": [
+        "€567,000",
+        "$1.9 million"
+      ]
+    },
+    "sample_id": 8
+  },
+  {
+    "text": "Frida Kahlo and Vincent van Gogh were visionary artists whose work continues to inspire generations.",
+    "true_entities": [
+      {
+        "text": "Frida Kahlo",
+        "label": "PERSON"
+      },
+      {
+        "text": "Vincent van Gogh",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Frida Kahlo",
+        "Vincent van Gogh"
+      ]
+    },
+    "sample_id": 9
+  },
+  {
+    "text": "The Roosevelt Memorial and the Vietnam Veterans Memorial honor American history and sacrifice.",
+    "true_entities": [
+      {
+        "text": "American",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Roosevelt Memorial",
+        "Vietnam Veterans Memorial"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "American"
+      ]
+    },
+    "sample_id": 10
+  },
+  {
+    "text": "Beethoven's 'Moonlight Sonata' and Chopin's 'Nocturne' are beloved classical compositions.",
+    "true_entities": [
+      {
+        "text": "Moonlight Sonata",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "Nocturne",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "Beethoven",
+        "label": "PERSON"
+      },
+      {
+        "text": "Chopin",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "Moonlight Sonata",
+        "Nocturne"
+      ]
+    },
+    "sample_id": 11
+  },
+  {
+    "text": "The Swedish and Norwegian delegations met with Danish officials to discuss regional cooperation.",
+    "true_entities": [
+      {
+        "text": "Swedish",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "Norwegian",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "Danish",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Swedish",
+        "Norwegian",
+        "Danish"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "Swedish",
+        "Norwegian",
+        "Danish"
+      ]
+    },
+    "sample_id": 12
+  },
+  {
+    "text": "Under the Americans with Disabilities Act, employers must provide reasonable accommodations for disabled workers.",
+    "true_entities": [
+      {
+        "text": "Americans with Disabilities Act",
+        "label": "LAW"
+      },
+      {
+        "text": "Americans",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "Americans"
+      ],
+      "LAW": [
+        "Americans with Disabilities Act"
+      ]
+    },
+    "sample_id": 13
+  },
+  {
+    "text": "Quality metrics improved by 38% while defect rates decreased by 14.2 percent compared to baseline.",
+    "true_entities": [
+      {
+        "text": "38%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "14.2 percent",
+        "label": "PERCENT"
+      }
+    ],
+    "predicted_entities": {
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "38%",
+        "14.2 percent"
+      ],
+      "PERCENT": [
+        "38%",
+        "14.2 percent"
+      ]
+    },
+    "sample_id": 14
+  },
+  {
+    "text": "The startup raised €15 million in Series A funding, while the acquisition deal was valued at £500 million.",
+    "true_entities": [
+      {
+        "text": "€15 million",
+        "label": "MONEY"
+      },
+      {
+        "text": "£500 million",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {
+      "MONEY": [
+        "€15 million",
+        "£500 million"
+      ]
+    },
+    "sample_id": 15
+  },
+  {
+    "text": "Maya Angelou and Ernest Hemingway were celebrated American authors who left lasting literary legacies.",
+    "true_entities": [
+      {
+        "text": "Maya Angelou",
+        "label": "PERSON"
+      },
+      {
+        "text": "Ernest Hemingway",
+        "label": "PERSON"
+      },
+      {
+        "text": "American",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Maya Angelou",
+        "Ernest Hemingway"
+      ],
+      "LOC": [
+        "American"
+      ]
+    },
+    "sample_id": 16
+  },
+  {
+    "text": "The Equal Pay Act and the Voting Rights Act advanced civil rights and equality in America.",
+    "true_entities": [
+      {
+        "text": "Equal Pay Act",
+        "label": "LAW"
+      },
+      {
+        "text": "Voting Rights Act",
+        "label": "LAW"
+      },
+      {
+        "text": "America",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LAW": [
+        "Equal Pay Act",
+        "Voting Rights Act"
+      ]
+    },
+    "sample_id": 17
+  },
+  {
+    "text": "The Empire State Building and the Statue of Liberty are iconic New York landmarks.",
+    "true_entities": [
+      {
+        "text": "New York",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "New York"
+      ],
+      "WORK_OF_ART": [
+        "Empire State Building",
+        "Statue of Liberty"
+      ]
+    },
+    "sample_id": 18
+  },
+  {
+    "text": "The launch of the iPhone 14 is scheduled for next month, and it will include major new features.",
+    "true_entities": [
+      {
+        "text": "iPhone 14",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "next month",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "iPhone 14"
+      ]
+    },
+    "sample_id": 19
+  },
+  {
+    "text": "The Employee Retirement Income Security Act protects pension benefits and retirement savings.",
+    "true_entities": [
+      {
+        "text": "Employee Retirement Income Security Act",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "LAW": [
+        "Employee Retirement Income Security Act"
+      ]
+    },
+    "sample_id": 20
+  },
+  {
+    "text": "The company's revenue for the first quarter of 2023 reached $1.5 billion, and their net profit was around $300 million. Experts expect the stock to rise by 10% next year.",
+    "true_entities": [
+      {
+        "text": "2023",
+        "label": "DATE"
+      },
+      {
+        "text": "next year",
+        "label": "DATE"
+      },
+      {
+        "text": "$1.5 billion",
+        "label": "MONEY"
+      },
+      {
+        "text": "$300 million",
+        "label": "MONEY"
+      },
+      {
+        "text": "10%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "next year",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "DATE": [
+        "2023"
+      ],
+      "MONEY": [
+        "$1.5 billion",
+        "$300 million"
+      ],
+      "PERCENT": [
+        "10%"
+      ]
+    },
+    "sample_id": 21
+  },
+  {
+    "text": "Microsoft is expanding its Azure cloud services across Europe, aiming to reach more customers by 2024.",
+    "true_entities": [
+      {
+        "text": "Microsoft",
+        "label": "ORG"
+      },
+      {
+        "text": "Azure",
+        "label": "ORG"
+      },
+      {
+        "text": "Europe",
+        "label": "LOC"
+      },
+      {
+        "text": "2024",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Microsoft",
+        "Azure"
+      ],
+      "LOC": [
+        "Europe"
+      ]
+    },
+    "sample_id": 22
+  },
+  {
+    "text": "Revenue growth accelerated by 47% while customer retention improved by 23.4 percent.",
+    "true_entities": [
+      {
+        "text": "47%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "23.4 percent",
+        "label": "PERCENT"
+      }
+    ],
+    "predicted_entities": {
+      "PERCENT": [
+        "47%",
+        "23.4 percent"
+      ]
+    },
+    "sample_id": 23
+  },
+  {
+    "text": "The lottery winner received twenty-five million euros, making her the second richest person in her hometown.",
+    "true_entities": [
+      {
+        "text": "twenty-five million euros",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {},
+    "sample_id": 24
+  },
+  {
+    "text": "Dr. Angela Davis and Professor Stephen Hawking made significant contributions to their respective fields.",
+    "true_entities": [
+      {
+        "text": "Dr. Angela Davis",
+        "label": "PERSON"
+      },
+      {
+        "text": "Professor Stephen Hawking",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Dr. Angela Davis",
+        "Professor Stephen Hawking"
+      ]
+    },
+    "sample_id": 25
+  },
+  {
+    "text": "The training starts at 6:45 AM and concludes at 8:30 PM with breaks at scheduled intervals.",
+    "true_entities": [
+      {
+        "text": "6:45 AM",
+        "label": "TIME"
+      },
+      {
+        "text": "8:30 PM",
+        "label": "TIME"
+      }
+    ],
+    "predicted_entities": {
+      "TIME": [
+        "6:45 AM",
+        "8:30 PM"
+      ]
+    },
+    "sample_id": 26
+  },
+  {
+    "text": "The movie 'Avatar' and the novel 'To Kill a Mockingbird' are both considered masterpieces in their respective mediums.",
+    "true_entities": [
+      {
+        "text": "Avatar",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "To Kill a Mockingbird",
+        "label": "WORK_OF_ART"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "Avatar",
+        "To Kill a Mockingbird"
+      ]
+    },
+    "sample_id": 27
+  },
+  {
+    "text": "The Chinese delegation met with British officials to discuss trade relations between the two nations.",
+    "true_entities": [
+      {
+        "text": "Chinese",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "British",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Chinese",
+        "British"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "Chinese",
+        "British"
+      ]
+    },
+    "sample_id": 28
+  },
+  {
+    "text": "The Consumer Protection Act and the Truth in Lending Act safeguard consumer rights and financial transparency.",
+    "true_entities": [
+      {
+        "text": "Consumer Protection Act",
+        "label": "LAW"
+      },
+      {
+        "text": "Truth in Lending Act",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "LAW": [
+        "Consumer Protection Act",
+        "Truth in Lending Act"
+      ]
+    },
+    "sample_id": 29
+  },
+  {
+    "text": "In 1997, the movie Titanic won multiple awards, and its soundtrack became a global hit.",
+    "true_entities": [
+      {
+        "text": "1997",
+        "label": "DATE"
+      },
+      {
+        "text": "Titanic",
+        "label": "WORK_OF_ART"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "Titanic"
+      ],
+      "DATE": [
+        "1997"
+      ]
+    },
+    "sample_id": 30
+  },
+  {
+    "text": "Harvard University and Stanford University are leading research institutions in higher education.",
+    "true_entities": [
+      {
+        "text": "Harvard University",
+        "label": "ORG"
+      },
+      {
+        "text": "Stanford University",
+        "label": "ORG"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Harvard University",
+        "Stanford University"
+      ]
+    },
+    "sample_id": 31
+  },
+  {
+    "text": "Market volatility increased by 22% while inflation rose by 3.8 percent this quarter.",
+    "true_entities": [
+      {
+        "text": "22%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "3.8 percent",
+        "label": "PERCENT"
+      }
+    ],
+    "predicted_entities": {
+      "PERCENT": [
+        "22%",
+        "3.8 percent"
+      ]
+    },
+    "sample_id": 32
+  },
+  {
+    "text": "The merger was valued at $3.7 billion while the acquisition cost £1.2 billion in total.",
+    "true_entities": [
+      {
+        "text": "$3.7 billion",
+        "label": "MONEY"
+      },
+      {
+        "text": "£1.2 billion",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {
+      "MONEY": [
+        "$3.7 billion",
+        "£1.2 billion"
+      ]
+    },
+    "sample_id": 33
+  },
+  {
+    "text": "Leonardo DiCaprio and Meryl Streep are Academy Award-winning actors known for their versatility.",
+    "true_entities": [
+      {
+        "text": "Leonardo DiCaprio",
+        "label": "PERSON"
+      },
+      {
+        "text": "Meryl Streep",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Leonardo DiCaprio",
+        "Meryl Streep"
+      ]
+    },
+    "sample_id": 34
+  },
+  {
+    "text": "The German language is widely spoken in Germany, Austria, and Switzerland.",
+    "true_entities": [
+      {
+        "text": "German",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "Germany",
+        "label": "LOC"
+      },
+      {
+        "text": "Austria",
+        "label": "LOC"
+      },
+      {
+        "text": "Switzerland",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Germany",
+        "Austria",
+        "Switzerland"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "German"
+      ]
+    },
+    "sample_id": 35
+  },
+  {
+    "text": "The workshop runs from 8:00 AM to 12:30 PM, with evening sessions starting at 6:15 PM.",
+    "true_entities": [
+      {
+        "text": "8:00 AM",
+        "label": "TIME"
+      },
+      {
+        "text": "12:30 PM",
+        "label": "TIME"
+      },
+      {
+        "text": "6:15 PM",
+        "label": "TIME"
+      },
+      {
+        "text": "evening",
+        "label": "TIME"
+      }
+    ],
+    "predicted_entities": {
+      "TIME": [
+        "8:00 AM",
+        "12:30 PM",
+        "6:15 PM"
+      ]
+    },
+    "sample_id": 36
+  },
+  {
+    "text": "The opera 'La Bohème' and the ballet 'Swan Lake' are performed regularly at major theaters worldwide.",
+    "true_entities": [
+      {
+        "text": "La Bohème",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "Swan Lake",
+        "label": "WORK_OF_ART"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "La Bohème",
+        "Swan Lake"
+      ]
+    },
+    "sample_id": 37
+  },
+  {
+    "text": "The Australian and New Zealand teams collaborated with South African researchers on the project.",
+    "true_entities": [
+      {
+        "text": "Australian",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "New Zealand",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "South African",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "New Zealand"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "Australian",
+        "New Zealand",
+        "South African"
+      ]
+    },
+    "sample_id": 38
+  },
+  {
+    "text": "The Environmental Protection Act and the Clean Water Act protect natural resources and public health.",
+    "true_entities": [
+      {
+        "text": "Environmental Protection Act",
+        "label": "LAW"
+      },
+      {
+        "text": "Clean Water Act",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "LAW": [
+        "Environmental Protection Act",
+        "Clean Water Act"
+      ]
+    },
+    "sample_id": 39
+  },
+  {
+    "text": "NASA's Perseverance rover successfully landed on Mars in February 2021.",
+    "true_entities": [
+      {
+        "text": "NASA",
+        "label": "ORG"
+      },
+      {
+        "text": "Mars",
+        "label": "LOC"
+      },
+      {
+        "text": "February 2021",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "NASA"
+      ],
+      "LOC": [
+        "Mars"
+      ],
+      "DATE": [
+        "February 2021"
+      ]
+    },
+    "sample_id": 40
+  },
+  {
+    "text": "Unemployment rates dropped to 3.2% in December, the lowest in twenty years according to government statistics.",
+    "true_entities": [
+      {
+        "text": "3.2%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "December",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "TIME": [
+        "December"
+      ],
+      "PERCENT": [
+        "3.2%",
+        "%"
+      ]
+    },
+    "sample_id": 41
+  },
+  {
+    "text": "The quarterly revenue reached $127 million, exceeding the projected target of €95 million.",
+    "true_entities": [
+      {
+        "text": "$127 million",
+        "label": "MONEY"
+      },
+      {
+        "text": "€95 million",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {
+      "MONEY": [
+        "$127 million",
+        "€95 million"
+      ]
+    },
+    "sample_id": 42
+  },
+  {
+    "text": "Malala Yousafzai and Nelson Mandela have inspired millions through their courage and leadership.",
+    "true_entities": [
+      {
+        "text": "Malala Yousafzai",
+        "label": "PERSON"
+      },
+      {
+        "text": "Nelson Mandela",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Malala Yousafzai",
+        "Nelson Mandela"
+      ]
+    },
+    "sample_id": 43
+  },
+  {
+    "text": "The Pacific Ocean is the largest ocean on Earth, covering about one-third of the planet's surface.",
+    "true_entities": [
+      {
+        "text": "Pacific Ocean",
+        "label": "LOC"
+      },
+      {
+        "text": "Earth",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Pacific Ocean",
+        "Earth"
+      ]
+    },
+    "sample_id": 44
+  },
+  {
+    "text": "The Great Wall of China is a historic monument that stretches across northern China.",
+    "true_entities": [
+      {
+        "text": "China",
+        "label": "LOC"
+      },
+      {
+        "text": "northern China",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "China"
+      ]
+    },
+    "sample_id": 45
+  },
+  {
+    "text": "The evening presentation begins at 7:15 PM and the late session starts at 9:30 PM.",
+    "true_entities": [
+      {
+        "text": "7:15 PM",
+        "label": "TIME"
+      },
+      {
+        "text": "9:30 PM",
+        "label": "TIME"
+      },
+      {
+        "text": "evening",
+        "label": "TIME"
+      }
+    ],
+    "predicted_entities": {
+      "TIME": [
+        "7:15 PM",
+        "9:30 PM"
+      ]
+    },
+    "sample_id": 46
+  },
+  {
+    "text": "Mozart's 'Requiem' and Van Gogh's 'Sunflowers' are timeless artistic masterpieces.",
+    "true_entities": [
+      {
+        "text": "Requiem",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "Sunflowers",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "Mozart",
+        "label": "PERSON"
+      },
+      {
+        "text": "Van Gogh",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "Requiem",
+        "Sunflowers"
+      ]
+    },
+    "sample_id": 47
+  },
+  {
+    "text": "The French delegation worked with Italian representatives to negotiate the trade agreement with Russian officials.",
+    "true_entities": [
+      {
+        "text": "French",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "Italian",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "Russian",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "French",
+        "Italian",
+        "Russian"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "French",
+        "Italian",
+        "Russian"
+      ]
+    },
+    "sample_id": 48
+  },
+  {
+    "text": "The Sherman Antitrust Act and the Clayton Act regulate business competition and monopolies.",
+    "true_entities": [
+      {
+        "text": "Sherman Antitrust Act",
+        "label": "LAW"
+      },
+      {
+        "text": "Clayton Act",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "LAW": [
+        "Sherman Antitrust Act",
+        "Clayton Act"
+      ]
+    },
+    "sample_id": 49
+  },
+  {
+    "text": "The conference takes place in January, March, and July with additional sessions in October and December.",
+    "true_entities": [
+      {
+        "text": "January",
+        "label": "DATE"
+      },
+      {
+        "text": "March",
+        "label": "DATE"
+      },
+      {
+        "text": "July",
+        "label": "DATE"
+      },
+      {
+        "text": "October",
+        "label": "DATE"
+      },
+      {
+        "text": "December",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "DATE": [
+        "January",
+        "March",
+        "July",
+        "October",
+        "December"
+      ]
+    },
+    "sample_id": 50
+  },
+  {
+    "text": "He graduated from the University of Paris in 2015, one of the oldest institutions in France.",
+    "true_entities": [
+      {
+        "text": "University of Paris",
+        "label": "ORG"
+      },
+      {
+        "text": "2015",
+        "label": "DATE"
+      },
+      {
+        "text": "France",
+        "label": "LOC"
+      },
+      {
+        "text": "Paris",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "University of Paris"
+      ],
+      "LOC": [
+        "Paris",
+        "France"
+      ],
+      "DATE": [
+        "2015"
+      ]
+    },
+    "sample_id": 51
+  },
+  {
+    "text": "The survey showed that 75 percent of respondents support the new policy, while only 18% oppose it.",
+    "true_entities": [
+      {
+        "text": "75 percent",
+        "label": "PERCENT"
+      },
+      {
+        "text": "18%",
+        "label": "PERCENT"
+      }
+    ],
+    "predicted_entities": {
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "75 percent",
+        "18%"
+      ],
+      "PERCENT": [
+        "75 percent",
+        "18%"
+      ]
+    },
+    "sample_id": 52
+  },
+  {
+    "text": "The contract is worth ¥500 million, while the insurance payout was $75,000.",
+    "true_entities": [
+      {
+        "text": "¥500 million",
+        "label": "MONEY"
+      },
+      {
+        "text": "$75,000",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {
+      "MONEY": [
+        "¥500 million",
+        "$75,000"
+      ]
+    },
+    "sample_id": 53
+  },
+  {
+    "text": "Dr. Sarah Johnson, a leading researcher at MIT, discovered a new method for quantum computing.",
+    "true_entities": [
+      {
+        "text": "Dr. Sarah Johnson",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Dr. Sarah Johnson"
+      ],
+      "ORG": [
+        "MIT"
+      ]
+    },
+    "sample_id": 54
+  },
+  {
+    "text": "The morning briefing starts at 9:00 AM and the afternoon session begins at 1:30 PM.",
+    "true_entities": [
+      {
+        "text": "9:00 AM",
+        "label": "TIME"
+      },
+      {
+        "text": "1:30 PM",
+        "label": "TIME"
+      }
+    ],
+    "predicted_entities": {
+      "TIME": [
+        "9:00 AM",
+        "1:30 PM"
+      ]
+    },
+    "sample_id": 55
+  },
+  {
+    "text": "The film 'Casablanca' and the painting 'Starry Night' are iconic works of 20th-century art.",
+    "true_entities": [
+      {
+        "text": "Casablanca",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "Starry Night",
+        "label": "WORK_OF_ART"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "Casablanca",
+        "Starry Night"
+      ]
+    },
+    "sample_id": 56
+  },
+  {
+    "text": "The Japanese government is investing in new renewable energy technologies to combat climate change.",
+    "true_entities": [
+      {
+        "text": "Japanese government",
+        "label": "ORG"
+      },
+      {
+        "text": "Japanese",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Japanese"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "Japanese"
+      ]
+    },
+    "sample_id": 57
+  },
+  {
+    "text": "The First Amendment to the Constitution protects freedom of speech, while the Civil Rights Act of 1964 prohibits discrimination.",
+    "true_entities": [
+      {
+        "text": "First Amendment",
+        "label": "LAW"
+      },
+      {
+        "text": "Constitution",
+        "label": "LAW"
+      },
+      {
+        "text": "Civil Rights Act of 1964",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "First Amendment",
+        "Civil Rights Act"
+      ],
+      "DATE": [
+        "1964"
+      ],
+      "LAW": [
+        "Constitution",
+        "Civil Rights Act"
+      ]
+    },
+    "sample_id": 58
+  },
+  {
+    "text": "Boeing and Airbus are the world's leading aircraft manufacturers competing in the aviation industry.",
+    "true_entities": [
+      {
+        "text": "Boeing",
+        "label": "ORG"
+      },
+      {
+        "text": "Airbus",
+        "label": "ORG"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Boeing",
+        "Airbus"
+      ]
+    },
+    "sample_id": 59
+  },
+  {
+    "text": "Sales increased by 28% while customer satisfaction improved by 15.7 percent.",
+    "true_entities": [
+      {
+        "text": "28%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "15.7 percent",
+        "label": "PERCENT"
+      }
+    ],
+    "predicted_entities": {
+      "PERCENT": [
+        "28%",
+        "15.7 percent"
+      ]
+    },
+    "sample_id": 60
+  },
+  {
+    "text": "The merger deal was worth twelve billion dollars, while the quarterly dividend was set at fifty cents per share.",
+    "true_entities": [
+      {
+        "text": "twelve billion dollars",
+        "label": "MONEY"
+      },
+      {
+        "text": "fifty cents",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {},
+    "sample_id": 61
+  },
+  {
+    "text": "Nelson Mandela and Mahatma Gandhi were influential leaders who championed human rights.",
+    "true_entities": [
+      {
+        "text": "Nelson Mandela",
+        "label": "PERSON"
+      },
+      {
+        "text": "Mahatma Gandhi",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Nelson Mandela",
+        "Mahatma Gandhi"
+      ]
+    },
+    "sample_id": 62
+  },
+  {
+    "text": "The White House in Washington D.C. was built in the late 18th century and serves as the official residence of the President of the United States.",
+    "true_entities": [
+      {
+        "text": "Washington D.C.",
+        "label": "LOC"
+      },
+      {
+        "text": "late 18th century",
+        "label": "DATE"
+      },
+      {
+        "text": "United States",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "White House",
+        "Washington D.C",
+        "United States"
+      ]
+    },
+    "sample_id": 63
+  },
+  {
+    "text": "The night shift begins at 11:00 PM and ends at dawn, around 6:00 AM.",
+    "true_entities": [
+      {
+        "text": "11:00 PM",
+        "label": "TIME"
+      },
+      {
+        "text": "dawn",
+        "label": "TIME"
+      },
+      {
+        "text": "6:00 AM",
+        "label": "TIME"
+      }
+    ],
+    "predicted_entities": {
+      "TIME": [
+        "11:00 PM",
+        "6:00 AM"
+      ]
+    },
+    "sample_id": 64
+  },
+  {
+    "text": "Shakespeare's 'Hamlet' and Picasso's 'Guernica' are masterpieces of literature and visual art.",
+    "true_entities": [
+      {
+        "text": "Shakespeare",
+        "label": "PERSON"
+      },
+      {
+        "text": "Picasso",
+        "label": "PERSON"
+      },
+      {
+        "text": "Hamlet",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "Guernica",
+        "label": "WORK_OF_ART"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "Hamlet",
+        "Guernica"
+      ]
+    },
+    "sample_id": 65
+  },
+  {
+    "text": "The Turkish and Greek communities have maintained strong cultural traditions in this diverse city.",
+    "true_entities": [
+      {
+        "text": "Turkish",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      },
+      {
+        "text": "Greek",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Turkish",
+        "Greek"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "Turkish",
+        "Greek"
+      ]
+    },
+    "sample_id": 66
+  },
+  {
+    "text": "The Occupational Safety and Health Act ensures workplace safety standards across industries.",
+    "true_entities": [
+      {
+        "text": "Occupational Safety and Health Act",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "LAW": [
+        "Occupational Safety and Health Act"
+      ]
+    },
+    "sample_id": 67
+  },
+  {
+    "text": "The thirteenth floor was renovated last month, making it the sixth building to undergo modernization.",
+    "true_entities": [
+      {
+        "text": "last month",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {},
+    "sample_id": 68
+  },
+  {
+    "text": "Microsoft Corporation is a leading software company founded by Bill Gates and Paul Allen.",
+    "true_entities": [
+      {
+        "text": "Microsoft Corporation",
+        "label": "ORG"
+      },
+      {
+        "text": "Bill Gates",
+        "label": "PERSON"
+      },
+      {
+        "text": "Paul Allen",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Bill Gates",
+        "Paul Allen"
+      ],
+      "ORG": [
+        "Microsoft Corporation"
+      ]
+    },
+    "sample_id": 69
+  },
+  {
+    "text": "Productivity rose by 42% this year, while costs decreased by 12.3 percent compared to last year.",
+    "true_entities": [
+      {
+        "text": "42%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "12.3 percent",
+        "label": "PERCENT"
+      }
+    ],
+    "predicted_entities": {
+      "PERCENT": [
+        "42%",
+        "12.3 percent"
+      ]
+    },
+    "sample_id": 70
+  },
+  {
+    "text": "The minimum wage increased to $15.50 per hour, and the executive bonus was $2.3 million this year.",
+    "true_entities": [
+      {
+        "text": "$15.50",
+        "label": "MONEY"
+      },
+      {
+        "text": "$2.3 million",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {
+      "MONEY": [
+        "$15.50",
+        "$2.3 million"
+      ]
+    },
+    "sample_id": 71
+  },
+  {
+    "text": "The NASA Kennedy Space Center and the Smithsonian Institution are iconic American landmarks.",
+    "true_entities": [
+      {
+        "text": "NASA",
+        "label": "ORG"
+      },
+      {
+        "text": "Smithsonian Institution",
+        "label": "ORG"
+      },
+      {
+        "text": "American",
+        "label": "NATIONALITIES_RELIGIOUS_GROUPS"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "NASA",
+        "Kennedy Space Center",
+        "Smithsonian Institution"
+      ],
+      "NATIONALITIES_RELIGIOUS_GROUPS": [
+        "American"
+      ]
+    },
+    "sample_id": 72
+  },
+  {
+    "text": "Beethoven's 'Symphony No. 9' and Da Vinci's 'Mona Lisa' remain timeless works of art.",
+    "true_entities": [
+      {
+        "text": "Beethoven",
+        "label": "PERSON"
+      },
+      {
+        "text": "Da Vinci",
+        "label": "PERSON"
+      },
+      {
+        "text": "Symphony No. 9",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "Mona Lisa",
+        "label": "WORK_OF_ART"
+      }
+    ],
+    "predicted_entities": {
+      "WORK_OF_ART": [
+        "Beethoven's 'Symphony No. 9",
+        "Da Vinci's 'Mona Lisa"
+      ]
+    },
+    "sample_id": 73
+  },
+  {
+    "text": "The GDPR regulation protects personal data privacy across European Union member states.",
+    "true_entities": [
+      {
+        "text": "GDPR regulation",
+        "label": "LAW"
+      },
+      {
+        "text": "European Union",
+        "label": "ORG"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "European Union"
+      ],
+      "WORK_OF_ART": [
+        "GDPR regulation"
+      ],
+      "LAW": [
+        "GDPR"
+      ]
+    },
+    "sample_id": 74
+  },
+  {
+    "text": "Microsoft announced its new AI software, which will help businesses automate complex tasks more efficiently.",
+    "true_entities": [
+      {
+        "text": "Microsoft",
+        "label": "ORG"
+      },
+      {
+        "text": "AI software",
+        "label": "WORK_OF_ART"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Microsoft"
+      ],
+      "WORK_OF_ART": [
+        "AI software"
+      ]
+    },
+    "sample_id": 75
+  },
+  {
+    "text": "Efficiency ratings improved by 52% while customer complaints dropped by 18.6 percent this year.",
+    "true_entities": [
+      {
+        "text": "52%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "18.6 percent",
+        "label": "PERCENT"
+      }
+    ],
+    "predicted_entities": {
+      "PERCENT": [
+        "52%",
+        "18.6 percent"
+      ]
+    },
+    "sample_id": 76
+  },
+  {
+    "text": "The startup secured ¥750 million in Series B funding plus an additional $125 million bridge loan.",
+    "true_entities": [
+      {
+        "text": "¥750 million",
+        "label": "MONEY"
+      },
+      {
+        "text": "$125 million",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {
+      "MONEY": [
+        "¥750 million",
+        "$125 million"
+      ]
+    },
+    "sample_id": 77
+  },
+  {
+    "text": "Barack Obama and Margaret Thatcher were transformative political leaders who shaped modern history.",
+    "true_entities": [
+      {
+        "text": "Barack Obama",
+        "label": "PERSON"
+      },
+      {
+        "text": "Margaret Thatcher",
+        "label": "PERSON"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Barack Obama",
+        "Margaret Thatcher"
+      ]
+    },
+    "sample_id": 78
+  },
+  {
+    "text": "Apple is releasing the iPhone 13 next month. The company is planning to unveil it at a special event in September.",
+    "true_entities": [
+      {
+        "text": "Apple",
+        "label": "ORG"
+      },
+      {
+        "text": "iPhone 13",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "next month",
+        "label": "DATE"
+      },
+      {
+        "text": "September",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Apple"
+      ],
+      "WORK_OF_ART": [
+        "iPhone 13"
+      ],
+      "DATE": [
+        "September"
+      ]
+    },
+    "sample_id": 79
+  },
+  {
+    "text": "Under the Family and Medical Leave Act, employees can take unpaid leave, and the Fair Labor Standards Act sets minimum wage requirements.",
+    "true_entities": [
+      {
+        "text": "Family and Medical Leave Act",
+        "label": "LAW"
+      },
+      {
+        "text": "Fair Labor Standards Act",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "LAW": [
+        "Family and Medical Leave Act",
+        "Fair Labor Standards Act"
+      ]
+    },
+    "sample_id": 80
+  },
+  {
+    "text": "Tesla's stock prices surged after the announcement of its new self-driving technology.",
+    "true_entities": [
+      {
+        "text": "Tesla",
+        "label": "ORG"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Tesla"
+      ]
+    },
+    "sample_id": 81
+  },
+  {
+    "text": "Market penetration increased by 67% while brand recognition improved by 29.8 percent globally.",
+    "true_entities": [
+      {
+        "text": "67%",
+        "label": "PERCENT"
+      },
+      {
+        "text": "29.8 percent",
+        "label": "PERCENT"
+      }
+    ],
+    "predicted_entities": {
+      "PERCENT": [
+        "67%",
+        "29.8 percent"
+      ]
+    },
+    "sample_id": 82
+  },
+  {
+    "text": "The concert hall renovation cost £340 million with additional funding of $78 million for equipment.",
+    "true_entities": [
+      {
+        "text": "£340 million",
+        "label": "MONEY"
+      },
+      {
+        "text": "$78 million",
+        "label": "MONEY"
+      }
+    ],
+    "predicted_entities": {
+      "MONEY": [
+        "£340 million",
+        "$78 million"
+      ]
+    },
+    "sample_id": 83
+  },
+  {
+    "text": "NASA's Artemis program aims to return astronauts to the Moon by 2025, marking a new era of lunar exploration.",
+    "true_entities": [
+      {
+        "text": "NASA",
+        "label": "ORG"
+      },
+      {
+        "text": "Artemis",
+        "label": "WORK_OF_ART"
+      },
+      {
+        "text": "by 2025",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "NASA"
+      ],
+      "LOC": [
+        "Moon"
+      ],
+      "WORK_OF_ART": [
+        "Artemis program"
+      ],
+      "DATE": [
+        "2025"
+      ]
+    },
+    "sample_id": 84
+  },
+  {
+    "text": "The Securities Exchange Act and the Investment Company Act regulate financial markets and institutions.",
+    "true_entities": [
+      {
+        "text": "Securities Exchange Act",
+        "label": "LAW"
+      },
+      {
+        "text": "Investment Company Act",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "LAW": [
+        "Securities Exchange Act",
+        "Investment Company Act"
+      ]
+    },
+    "sample_id": 85
+  },
+  {
+    "text": "An apple a day keeps the doctor away. Apples come in many varieties.",
+    "true_entities": [],
+    "predicted_entities": {},
+    "sample_id": 86
+  },
+  {
+    "text": "The Eiffel Tower, located in Paris, is a symbol of France and attracts millions of tourists every year.",
+    "true_entities": [
+      {
+        "text": "Paris",
+        "label": "LOC"
+      },
+      {
+        "text": "France",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Eiffel Tower",
+        "Paris",
+        "France"
+      ]
+    },
+    "sample_id": 87
+  },
+  {
+    "text": "The meeting starts at 2:15 PM and the conference call is scheduled for 9:45 AM tomorrow.",
+    "true_entities": [
+      {
+        "text": "2:15 PM",
+        "label": "TIME"
+      },
+      {
+        "text": "9:45 AM",
+        "label": "TIME"
+      },
+      {
+        "text": "tomorrow",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "TIME": [
+        "2:15 PM",
+        "9:45 AM"
+      ]
+    },
+    "sample_id": 88
+  },
+  {
+    "text": "Tesla's new electric vehicles are revolutionizing the auto industry, with models like the Model 3.",
+    "true_entities": [
+      {
+        "text": "Tesla",
+        "label": "ORG"
+      },
+      {
+        "text": "Model 3",
+        "label": "WORK_OF_ART"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Tesla"
+      ],
+      "WORK_OF_ART": [
+        "Model 3"
+      ]
+    },
+    "sample_id": 89
+  },
+  {
+    "text": "The Eiffel Tower in Paris, France, is one of the most iconic landmarks in the world.",
+    "true_entities": [
+      {
+        "text": "Paris",
+        "label": "LOC"
+      },
+      {
+        "text": "France",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "Paris",
+        "France"
+      ],
+      "WORK_OF_ART": [
+        "Eiffel Tower"
+      ]
+    },
+    "sample_id": 90
+  },
+  {
+    "text": "The emergency alert was sent at 23:45 , and the first responders arrived by midnight.",
+    "true_entities": [
+      {
+        "text": "23:45",
+        "label": "TIME"
+      },
+      {
+        "text": "midnight",
+        "label": "TIME"
+      }
+    ],
+    "predicted_entities": {
+      "DATE": [
+        "23:45"
+      ]
+    },
+    "sample_id": 91
+  },
+  {
+    "text": "The daily briefing is at 11:00 AM with follow-up meetings scheduled for 3:30 PM and 5:45 PM.",
+    "true_entities": [
+      {
+        "text": "11:00 AM",
+        "label": "TIME"
+      },
+      {
+        "text": "3:30 PM",
+        "label": "TIME"
+      },
+      {
+        "text": "5:45 PM",
+        "label": "TIME"
+      }
+    ],
+    "predicted_entities": {
+      "TIME": [
+        "11:00 AM",
+        "3:30 PM",
+        "5:45 PM"
+      ]
+    },
+    "sample_id": 92
+  },
+  {
+    "text": "On March 15, 2023, President Joe Biden met with Apple Inc. executives in Washington, D.C. to discuss the implications of the Affordable Care Act on corporate healthcare policies.",
+    "true_entities": [
+      {
+        "text": "March 15, 2023",
+        "label": "DATE"
+      },
+      {
+        "text": "Joe Biden",
+        "label": "PERSON"
+      },
+      {
+        "text": "Apple Inc.",
+        "label": "ORG"
+      },
+      {
+        "text": "Washington, D.C.",
+        "label": "LOC"
+      },
+      {
+        "text": "Affordable Care Act",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "PERSON": [
+        "Joe Biden"
+      ],
+      "ORG": [
+        "Apple Inc"
+      ],
+      "LOC": [
+        "Washington, D.C",
+        "March 15, 2023"
+      ],
+      "WORK_OF_ART": [
+        "Affordable Care Act"
+      ],
+      "DATE": [
+        "March 15, 2023"
+      ]
+    },
+    "sample_id": 93
+  },
+  {
+    "text": "On July 15, 2024, Microsoft acquired the cybersecurity startup Darktrace for $5.2 billion, following approval from the European Commission under antitrust law.",
+    "true_entities": [
+      {
+        "text": "July 15, 2024",
+        "label": "DATE"
+      },
+      {
+        "text": "Microsoft",
+        "label": "ORG"
+      },
+      {
+        "text": "Darktrace",
+        "label": "ORG"
+      },
+      {
+        "text": "$5.2 billion",
+        "label": "MONEY"
+      },
+      {
+        "text": "European Commission",
+        "label": "ORG"
+      },
+      {
+        "text": "antitrust law",
+        "label": "LAW"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Microsoft",
+        "Darktrace",
+        "European Commission"
+      ],
+      "DATE": [
+        "July 15, 2024"
+      ],
+      "MONEY": [
+        "$5.2 billion"
+      ]
+    },
+    "sample_id": 94
+  },
+  {
+    "text": "Pfizer and BioNTech announced that their COVID-19 vaccine received full approval from the U.S. Food and Drug Administration in August 2021.",
+    "true_entities": [
+      {
+        "text": "Pfizer",
+        "label": "ORG"
+      },
+      {
+        "text": "BioNTech",
+        "label": "ORG"
+      },
+      {
+        "text": "COVID-19",
+        "label": "DISEASE"
+      },
+      {
+        "text": "U.S. Food and Drug Administration",
+        "label": "ORG"
+      },
+      {
+        "text": "August 2021",
+        "label": "DATE"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "Pfizer",
+        "BioNTech",
+        "U.S. Food and Drug Administration"
+      ],
+      "LOC": [
+        "U.S"
+      ],
+      "WORK_OF_ART": [
+        "COVID-19 vaccine"
+      ],
+      "DATE": [
+        "August 2021"
+      ]
+    },
+    "sample_id": 95
+  },
+  {
+    "text": "In March 2020, the World Health Organization (WHO) declared COVID-19 a global pandemic, urging governments to implement strict measures such as lockdowns, social distancing, and mandatory mask-wearing. In the United States, the Centers for Disease Control and Prevention (CDC) played a key role in issuing guidelines to limit the spread of the virus. Pharmaceutical companies including Moderna, Pfizer, and AstraZeneca rapidly developed vaccines using innovative technologies such as mRNA. By December 2020, Pfizer-BioNTech’s vaccine was granted emergency use authorization by the U.S. Food and Drug Administration (FDA). Later, in 2021, several countries, including Germany, Canada, and Japan, launched nationwide vaccination campaigns. Despite this, new variants such as Delta and Omicron led to fresh waves of infections, putting significant strain on healthcare systems worldwide.",
+    "true_entities": [
+      {
+        "text": "March 2020",
+        "label": "DATE"
+      },
+      {
+        "text": "World Health Organization",
+        "label": "ORG"
+      },
+      {
+        "text": "WHO",
+        "label": "ORG"
+      },
+      {
+        "text": "United States",
+        "label": "LOC"
+      },
+      {
+        "text": "Centers for Disease Control and Prevention",
+        "label": "ORG"
+      },
+      {
+        "text": "CDC",
+        "label": "ORG"
+      },
+      {
+        "text": "Moderna",
+        "label": "ORG"
+      },
+      {
+        "text": "Pfizer",
+        "label": "ORG"
+      },
+      {
+        "text": "AstraZeneca",
+        "label": "ORG"
+      },
+      {
+        "text": "mRNA",
+        "label": "TECH"
+      },
+      {
+        "text": "December 2020",
+        "label": "DATE"
+      },
+      {
+        "text": "Pfizer-BioNTech",
+        "label": "ORG"
+      },
+      {
+        "text": "U.S. Food and Drug Administration",
+        "label": "ORG"
+      },
+      {
+        "text": "FDA",
+        "label": "ORG"
+      },
+      {
+        "text": "2021",
+        "label": "DATE"
+      },
+      {
+        "text": "Germany",
+        "label": "LOC"
+      },
+      {
+        "text": "Canada",
+        "label": "LOC"
+      },
+      {
+        "text": "Japan",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "ORG": [
+        "World Health Organization",
+        "WHO",
+        "Centers for Disease Control and Prevention",
+        "CDC",
+        "Moderna",
+        "Pfizer",
+        "AstraZeneca",
+        "Pfizer-BioNTech",
+        "U.S. Food and Drug Administration"
+      ],
+      "LOC": [
+        "United States",
+        "Germany",
+        "Canada",
+        "Japan"
+      ],
+      "WORK_OF_ART": [
+        "COVID-19",
+        "Delta",
+        "Omicron"
+      ],
+      "DATE": [
+        "March 2020",
+        "December 2020",
+        "2021"
+      ]
+    },
+    "sample_id": 96
+  },
+  {
+    "text": "On September 5, 2022, the city of San Francisco experienced one of the heaviest rainfalls in decades, causing temporary flooding in several neighborhoods. Despite the disruption, the local government coordinated cleanup efforts quickly and public transportation resumed normal operations within 24 hours.",
+    "true_entities": [
+      {
+        "text": "September 5, 2022",
+        "label": "DATE"
+      },
+      {
+        "text": "San Francisco",
+        "label": "LOC"
+      }
+    ],
+    "predicted_entities": {
+      "LOC": [
+        "San Francisco"
+      ],
+      "DATE": [
+        "September 5, 2022"
+      ]
+    },
+    "sample_id": 97
+  }
+]

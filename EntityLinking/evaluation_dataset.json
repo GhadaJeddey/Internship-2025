@@ -1,0 +1,206 @@
+[
+     {
+            "mention": "Google",
+            "context": "Google's DeepMind division published a groundbreaking paper on AI in protein folding.",
+            "ground_truth_qid" : "Q95"
+        },
+    {
+        "mention": "Tesla",
+        "context": "Tesla's recent price adjustments for the Model 3 in China have sparked debate among investors.",
+        "ground_truth_qid" : "Q478214"
+         },
+    {
+        "mention": "Nike",
+        "context": "Nike's 'Move to Zero' initiative has seen them incorporate recycled materials into their latest footwear lines.",
+        "ground_truth_qid" : "Q483915"
+    },
+    {
+        "mention": "Amazon",
+        "context": "Amazon Web Services experienced a significant outage in its US-East-1 region, impacting numerous online services.",
+        "ground_truth_qid" : "Q3884"
+    },
+    {
+        "mention": "Nike",
+        "context": "Nike's 'Move to Zero' initiative has seen them incorporate recycled materials into their latest footwear lines.",
+        "ground_truth_qid" : "Q483915"
+        },
+    {
+        "mention": "Amazon",
+        "context": "Amazon Web Services experienced a significant outage in its US-East-1 region, impacting numerous online services.",
+        "ground_truth_qid" : "Q3884"
+    },
+    {
+        "mention": "Meta",
+        "context": "Meta unveiled a new open-source large language model, LLaMA 3, aimed at academic and enterprise use cases.",
+        "ground_truth_qid" : "Q380"
+    },
+    {
+        "mention": "OpenAI",
+        "context": "OpenAI introduced 'memory' in ChatGPT, allowing it to retain context across sessions for more personalized interactions.",
+        "ground_truth_qid" : "Q21708200"
+    },
+    {
+        "mention": "Apple",
+        "context": "Apple launched a self-repair program, enabling users to order genuine parts and tools to repair their iPhones and MacBooks at home.",
+        "ground_truth_qid" : "Q312"
+    },
+    {
+        "mention": "OpenAI",
+        "context": "OpenAI introduced 'memory' in ChatGPT, allowing it to retain context across sessions for more personalized interactions.",
+        "ground_truth_qid" : "Q21708200"
+    },
+    {
+        "mention": "Meta",
+        "context": "Meta unveiled a new open-source large language model, LLaMA 3, aimed at academic and enterprise use cases.",
+        "ground_truth_qid" : "Q380"
+    },
+    {
+        "mention": "Apple",
+        "context": "Apple launched a self-repair program, enabling users to order genuine parts and tools to repair their iPhones and MacBooks at home.",
+        "ground_truth_qid" : "Q312"
+    },
+   {
+        "mention": "Microsoft",
+        "context": "Microsoft integrated Copilot AI across its Office 365 suite, enhancing productivity with generative AI suggestions.",
+        "ground_truth_qid" : "Q2283"
+    },
+    {
+        "mention": "SpaceX",
+        "context": "SpaceX successfully tested its Starship launch system with full re-entry and ocean splashdown, a key milestone in its Mars program.",
+        "ground_truth_qid" : "Q193701"
+    },
+     {
+        "mention": "Netflix",
+        "context": "Netflix expanded its ad-supported tier and announced partnerships with global brands to diversify its revenue streams.",
+        "ground_truth_qid" : "Q907311"
+    },
+    {
+        "mention": "Eleven",
+        "context": "Eleven is a fictional character from the Netflix series Stranger Things.",
+        "ground_truth_qid": "Q27955792"
+    },
+    {
+        "mention" : "Amazon",
+        "context" : "The Amazon forest, often referred to as the lungs of the Earth, plays a vital role in regulating the planet's climate and biodiversity",
+        "ground_truth_qid" : "Q177567"
+    },
+    {
+        "mention" : "Twelve",
+        "context" : "Twelve is a significant number in various cultures and religions.",
+        "ground_truth_qid" : "Q36977"
+    },
+    {
+        "mention": "Jaguar",
+        "context": "The jaguar prowls through the dense rainforests of Central and South America.",
+        "ground_truth_qid": "Q35694"
+    },
+
+    {
+        "mention": "Jaguar",
+        "context": "Jaguar's latest electric SUV, the I-PACE, represents a bold step in the auto industry's green transition.",
+        "ground_truth_qid": "Q30055"
+    },
+
+    {
+        "mention": "Python",
+        "context": "Python has become one of the most popular programming languages for AI and machine learning.",
+        "ground_truth_qid": "Q28865"
+    },
+
+    {
+        "mention": "Python",
+        "context": "The python wrapped itself around the tree, motionless as it waited for its prey.",
+        "ground_truth_qid": "Q184018"
+    },
+
+    {
+        "mention": "Mercury",
+        "context": "Mercury is the smallest planet in our solar system and closest to the Sun.",
+        "ground_truth_qid": "Q308"
+    },
+
+    {
+        "mention": "Mercury",
+        "context": "Mercury was widely used in thermometers before its toxicity became known.",
+        "ground_truth_qid": "Q925"
+    },
+ 
+    {
+        "mention": "Mercury",
+        "context": "Freddie Mercury's voice and stage presence made Queen one of the most iconic rock bands in history.",
+        "ground_truth_qid": "Q60009810"
+    },
+
+    {
+        "mention": "Java",
+        "context": "Java is an island of Indonesia known for its volcanoes and cultural heritage.",
+        "ground_truth_qid": "Q3757"
+    },
+
+    {
+        "mention": "Java",
+        "context": "Java remains a dominant programming language in enterprise software development.",
+        "ground_truth_qid": "Q251"
+    },
+
+    {
+        "mention": "Apollo",
+        "context": "Apollo 11 was the first mission to land humans on the Moon.",
+        "ground_truth_qid": "Q46611"
+    },
+
+    {
+        "mention": "Paris",
+        "context": "Paris is hosting the next Summer Olympic Games, drawing global attention to its infrastructure and urban planning.",
+        "ground_truth_qid": "Q90"
+    },
+
+    {
+        "mention": "Paris",
+        "context": "Paris Hilton has launched a new skincare line targeting Gen Z consumers.",
+        "ground_truth_qid": "Q47899"
+    },
+
+    {
+        "mention": "Titan",
+        "context": "Titan, Saturn’s largest moon, has a thick atmosphere and lakes of liquid methane.",
+        "ground_truth_qid": "Q2565"
+    },
+
+    {
+        "mention": "Windows",
+        "context": "The cathedral’s stained glass windows depicted scenes from biblical stories.",
+        "ground_truth_qid": "Q35473"
+    },
+    
+    {
+        "mention": "Lincoln",
+        "context": "Lincoln gave the Gettysburg Address during the American Civil War.",
+        "ground_truth_qid": "Q91"
+    },
+
+    {
+        "mention": "Lincoln",
+        "context": "Lincoln is a historic city in the East Midlands of England, known for its medieval cathedral.",
+        "ground_truth_qid": "Q180057"
+    },
+
+    {
+        "mention": "Falcon",
+        "context": "The falcon soared high above the canyon, its keen eyes scanning for prey.",
+        "ground_truth_qid": "Q43489"
+    },
+
+    {
+        "mention": "Oracle",
+        "context": "Oracle released its latest quarterly earnings, showing growth in its cloud infrastructure segment.",
+        "ground_truth_qid": "Q19900"
+    },
+  
+    {
+        "mention": "Oracle",
+        "context": "In ancient Greece, people would consult the Oracle at Delphi for guidance from the gods.",
+        "ground_truth_qid": "Q217123"
+      }
+    
+  ]
