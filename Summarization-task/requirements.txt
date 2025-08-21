@@ -1,0 +1,28 @@
+# Core ML/NLP Libraries
+torch>=2.0.0
+transformers>=4.30.0
+tokenizers>=0.13.0
+
+# API Framework
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+pydantic>=2.0.0
+
+# Text Processing and Chunking
+langchain>=0.0.200
+
+# Evaluation Metrics
+evaluate>=0.4.0
+rouge-score>=0.1.2
+bert-score>=0.3.13
+
+# Utilities
+numpy>=1.24.0
+pandas>=2.0.0
+tqdm>=4.65.0
+python-multipart>=0.0.6
+python-dotenv>=1.0.0
+
+# Development and Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
