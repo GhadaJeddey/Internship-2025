@@ -16,12 +16,19 @@ A high-performance FastAPI-based text summarization service using Facebook's BAR
 
 Summarization-task/
     ├── Summarizer.py             # Summarization implementation
+    
     ├── SummarizerAPI.py          # Summarization FastAPI service
+    
     ├── LLM-Summary.py            # LLM that generated reference summaries for the evaluation articles
+    
     ├── articles.md               # Evaluation articles
+    
     ├── summarization_results.json # Summarization results
+    
     ├── summarization_result6s.json # evaluation results 
+    
     ├── requirements.txt 
+    
     └── ReadME.md
 
 ### Core Components
