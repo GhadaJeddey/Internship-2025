@@ -1,0 +1,27 @@
+# Core ML/NLP
+transformers>=4.35.0
+bitsandbytes>=0.41.0
+torch>=2.0.0
+
+# API (for FastAPI service)
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+python-dotenv>=1.0.0
+nest_asyncio>=1.5.6
+pyngrok>=5.3.0
+
+# Data processing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Utilities
+pydantic>=1.10.7
+requests>=2.28.0
+
+# Evaluation & Development
+scikit-learn>=1.2.2
+tabulate>=0.9.0
+pytest>=7.4.0
+
+# For Google Colab (optional, only if using Colab upload/download)
+google-colab>=1.0.0

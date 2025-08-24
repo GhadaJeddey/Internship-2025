@@ -272,7 +272,6 @@ Text:
         return NEREntities(**merged)
 
     def ner_predict(self, text: str) -> NEREntities:
-        print('HERE IN NER PREDICT')
         max_tokens = 300
         if self.token_counter(text, self.tokenizer) > max_tokens:
 
@@ -287,7 +286,6 @@ Text:
 
         entities = self.post_process_entities(entities,text)
         res = entities.model_dump(exclude_defaults=True)
-        print(json.dumps(res,indent=2,ensure_ascii=False))
         return json.dumps(res,indent=2,ensure_ascii=False)
 
     def evaluation(self, dataset_path: str = "evaluation.json",
@@ -564,3 +562,9 @@ Text:
         plt.tight_layout()
         plt.show()
 
+if __name__ == "__main__":
+    ner_extractor = NERExtractor(model_name="Qwen/Qwen2.5-7B-Instruct", quantized_8=False)
+    sample_text = "Elon Musk is the CEO of SpaceX and Tesla, based in California. He was born on June 28, 1971."
+    entities = ner_extractor.extract_entities(sample_text)
+    print(entities)
+    
