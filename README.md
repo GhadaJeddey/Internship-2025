@@ -1,4 +1,4 @@
-# AxeFinance - Multi-Modal NLP Pipeline
+# NLP Pipeline
 
 A comprehensive Natural Language Processing pipeline for financial text analysis, featuring Named Entity Recognition (NER), Entity Linking, and Text Summarization with FastAPI-based microservices architecture.
 
