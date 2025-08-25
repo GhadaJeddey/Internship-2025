@@ -1,0 +1,46 @@
+## ALL NECESSARY REQUIREMENTS FOR ALL JOBS AT ONES 
+# Core ML/NLP Libraries
+torch
+transformers
+tokenizers
+bitsandbytes
+sentence-transformers
+
+# API Framework
+fastapi
+uvicorn
+pydantic
+
+# Async, Tunneling, and Environment
+nest-asyncio
+pyngrok
+python-dotenv
+
+# Text Processing and Chunking
+langchain
+
+# Evaluation Metrics
+evaluate
+rouge-score
+bert-score
+
+# Utilities
+numpy
+pandas
+tqdm
+scipy
+json_repair
+requests
+urllib3
+python-multipart
+
+# Visualization
+matplotlib
+seaborn
+
+# Security
+cryptography
+
+# Development and Testing
+pytest
+pytest-asyncio
