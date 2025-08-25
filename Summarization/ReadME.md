@@ -112,7 +112,7 @@ curl -X POST "http://localhost:8000/Summarizer/summarize" \
      }'
 ```
 
-## 📡 API Reference
+## API Reference
 
 ### Endpoints
 
@@ -173,7 +173,7 @@ Detailed model information and configuration.
 3. **Progressive Summarization**: Previous summary + current chunk → new summary
 
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - [Facebook BART](https://arxiv.org/abs/1910.13461) - Base summarization model
 - [Hugging Face Transformers](https://github.com/huggingface/transformers) - Model implementation
