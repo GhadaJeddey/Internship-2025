@@ -92,6 +92,7 @@ async def model_info():
         loaded_at=model_loaded_at or "unknown"
     )
 
+
 @app.post("/EntityLinker/extract", response_model=EntityLinkingResponse)
 async def extract_entity(request: EntityLinkingRequest):
     """
@@ -99,26 +100,25 @@ async def extract_entity(request: EntityLinkingRequest):
     Returns the best entity result (top_results[0])
     """
     start_time = datetime.now()
-    
+
     if linker is None:
         raise HTTPException(status_code=503, detail="Entity Linking model not loaded")
-    
+
     try:
-        
         if not request.mention.strip():
             raise HTTPException(status_code=400, detail="Mention cannot be empty")
-        
         if not request.context.strip():
             raise HTTPException(status_code=400, detail="Context cannot be empty")
-        
+
         print(f"Processing mention: '{request.mention}' with context length: {len(request.context)}")
-        
+
         candidates = linker.candidate_search(request.mention, request.context)
-        
+        print(f"Found {len(candidates)} candidates for '{request.mention}'")
+
         if not candidates:
+            print(f"No candidates found for mention: '{request.mention}'")
             end_time = datetime.now()
             processing_time = (end_time - start_time).total_seconds()
-            
             return EntityLinkingResponse(
                 mention=request.mention,
                 context=request.context,
@@ -126,14 +126,22 @@ async def extract_entity(request: EntityLinkingRequest):
                 timestamp=end_time.isoformat(),
                 processing_time_seconds=processing_time
             )
-        
+
         top_results, best_result = linker.link_entities(
-            candidates, 
-            request.mention, 
-            request.context, 
+            candidates,
+            request.mention,
+            request.context,
             top_k=request.top_k
         )
         
+        print(f"Link entities returned {len(top_results)} results")
+        print(f"Best result: {best_result}")
+
+        # Fix: If best_result is None but top_results is not empty, use top_results[0]
+        if not best_result and top_results:
+            best_result = top_results[0]
+            print(f"Using first result as best: {best_result}")
+
         best_entity = None
         if best_result:
             best_entity = EntityResult(
@@ -141,10 +149,13 @@ async def extract_entity(request: EntityLinkingRequest):
                 label=best_result["label"],
                 description=best_result.get("description", "")
             )
-        
+            print(f"Created best_entity: {best_entity}")
+        else:
+            print("No best_result found - returning null")
+
         end_time = datetime.now()
         processing_time = (end_time - start_time).total_seconds()
-        
+
         return EntityLinkingResponse(
             mention=request.mention,
             context=request.context,
@@ -152,7 +163,7 @@ async def extract_entity(request: EntityLinkingRequest):
             timestamp=end_time.isoformat(),
             processing_time_seconds=processing_time
         )
-        
+
     except Exception as e:
         print(f"Error during entity linking: {e}")
         raise HTTPException(status_code=500, detail=f"Entity linking failed: {str(e)}")

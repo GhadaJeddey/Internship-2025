@@ -3,40 +3,22 @@
 This module provides a high-performance Named Entity Recognition (NER) API using state-of-the-art transformer models (e.g., Qwen2.5-7B-Instruct). It is designed for robust extraction of entities such as PERSON and ORG from text, and is easily deployable as a FastAPI service.
 
 ---
+##  Project Structure
 
-## 🚀 Features
+```
+NER/
+├── NER.py                  # Core NER logic and model
+├── NerAPI.py               # FastAPI server exposing NER endpoints
+├── NerAPI.ipynb            # For google colab 
+├── evaluation_dataset.json # Dataset for evaluation
+├── evaluation_results.json # Evaluation metrics/results
+├── predictions_results.json# Model predictions on evaluation data
+├── requirements.txt        # Python dependencies
+├── .env                    # Environment variables (e.g., API keys)
+├── ReadME.md               # Documentation (this file)
+```
 
-- **Transformer-based NER**: Utilizes large language models for accurate entity extraction.
-- **FastAPI Service**: Easy-to-use REST API for integration with other systems.
-- **CORS Enabled**: Ready for web and cross-origin requests.
-- **ngrok Integration**: Expose your local API securely for testing or demo purposes.
-- **Customizable**: Easily switch models or extend entity types.
-- **Evaluation Tools**: Includes scripts for evaluating and visualizing NER performance.
-
----
-
-## 📦 Installation
-
-1. **Clone the repository** and navigate to the NER folder:
-    ```sh
-    git clone <your-repo-url>
-    cd AxeFinance/NER
-    ```
-
-2. **Create a virtual environment** (recommended):
-    ```sh
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-
-3. **Install dependencies**:
-    ```sh
-    pip install -r requirements.txt
-    ```
-
----
-
-## ⚡ Usage
+## Quick Start
 
 ### 1. **Run the FastAPI Server**
 ```sh
@@ -76,20 +58,16 @@ uvicorn NerAPI:app --reload
 
 ---
 
-## 🧪 Evaluation
 
-- Use the provided scripts to evaluate model predictions and print results in tabular format.
-- Example:  
-  ```sh
-  python pretty.py
-  ```
+##  Performance
 
----
+| Metric         | Value   |
+|----------------|---------|
+| Precision      | 0.8618  |
+| Recall         | 0.8339  |
+| F1-score       | 0.8372  |
+| Evaluation Set | 257     |
 
-## 🛠️ Configuration
-
-- **Model selection**: Change the `model_name` in `NerAPI.py` or `NER.py`.
-- **Entity types**: Extend the `NEREntities` class in `NER.py` to add more entity categories.
 
 ---
 
@@ -98,8 +76,3 @@ uvicorn NerAPI:app --reload
 See [`requirements.txt`](./requirements.txt) for all dependencies.
 
 ---
-
-## 🤝 Contributing
-
-Pull requests and issues are welcome! Please open an issue to discuss your ideas or report bugs.
-

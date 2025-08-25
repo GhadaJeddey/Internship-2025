@@ -1,10 +1,6 @@
-import requests
+import requests,json, time ,re 
 from sentence_transformers import SentenceTransformer, util
-import json
-import time
-import torch
 from difflib import SequenceMatcher
-import re
 from collections import Counter
 
 
@@ -44,8 +40,12 @@ class WikiDataAPI:
             "limit": limit
         }
         
+        headers = {
+            'User-Agent': 'AxeFinance-EntityLinker/1.0 (https://github.com/GhadaJeddey/AxeFinance) Python/requests'
+        }
+        
         try:
-            response = requests.get(search_url, params=params, timeout=10)
+            response = requests.get(search_url, params=params, headers=headers, timeout=10)
             response.raise_for_status()
         except requests.RequestException as e:
             print(f"Error fetching data for query '{query}': {e}")
@@ -80,8 +80,12 @@ class WikiDataAPI:
             
         entity_url = f"https://www.wikidata.org/wiki/Special:EntityData/{qid}.json"
         
+        headers = {
+            'User-Agent': 'AxeFinance-EntityLinker/1.0 (https://github.com/GhadaJeddey/AxeFinance) Python/requests'
+        }
+        
         try:
-            response = requests.get(entity_url, timeout=10)
+            response = requests.get(entity_url, headers=headers, timeout=10)
             if response.status_code != 200:
                 return []
             
@@ -517,3 +521,52 @@ def main():
 
     analyze_results(data, "entity_linking_results.json")
 
+import json
+from typing import Dict, List, Tuple
+
+def calculate_entity_linking_metrics(results_file_path: str) -> Dict[str, float]:
+    """
+    Calculate precision, recall, F1-score, and top-3 accuracy from entity linking results.
+    
+    Args:
+        results_file_path (str): Path to the JSON results file
+        
+    Returns:
+        Dict[str, float]: Dictionary containing evaluation metrics
+    """
+
+    with open(results_file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    results = data['results']
+    total_samples = len(results)
+    
+    correct_predictions = 0
+    top_3_correct = 0
+    
+    for result in results:
+        ground_truth_qid = result['ground_truth_qid']
+        predicted_qid = result['predicted_qid']
+        top_k_predictions = result['top_k_predictions']
+        
+        if predicted_qid == ground_truth_qid:
+            correct_predictions += 1
+        
+        top_3_qids = [pred['qid'] for pred in top_k_predictions[:3]]
+        if ground_truth_qid in top_3_qids:
+            top_3_correct += 1
+    
+    accuracy = correct_predictions / total_samples if total_samples > 0 else 0.0
+    precision = accuracy  
+    top_3_accuracy = top_3_correct / total_samples if total_samples > 0 else 0.0
+    
+    return {
+        'precision': round(precision, 4),
+        'top_3_accuracy': round(top_3_accuracy, 4),
+        'total_samples': total_samples,
+        'correct_predictions': correct_predictions,
+        'top_3_correct': top_3_correct
+    }
+
+metrics = calculate_entity_linking_metrics("entity_linking_results.json")
+print(metrics)

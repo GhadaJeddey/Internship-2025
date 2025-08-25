@@ -1,32 +1,12 @@
-import re , string, warnings , torch , string, json_repair , json,os
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig,AutoModelForTokenClassification
-from collections import defaultdict
-from pydantic import BaseModel, Field, validator , root_validator, model_validator
-from typing import Dict, List, Tuple, Set, Optional, Any , Dict
-from pprint import pprint
+import re, string, torch, json_repair, json
 import numpy as np
-from collections import Counter, defaultdict
-from datetime import datetime
 import matplotlib.pyplot as plt
 import seaborn as sns
-import re , string, warnings , torch , string, json_repair , json
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig,AutoModelForTokenClassification
-from collections import defaultdict
-from pydantic import BaseModel, Field, validator , root_validator, model_validator
-from typing import Dict, List, Tuple, Set, Optional, Any , Dict
-from pprint import pprint
-import re , string, warnings , torch , string, json_repair , json,os
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig,AutoModelForTokenClassification
-from collections import defaultdict
-from pydantic import BaseModel, Field, validator , root_validator, model_validator
-from typing import Dict, List, Tuple, Set, Optional, Any , Dict
-from pprint import pprint
-import numpy as np
-from collections import Counter, defaultdict
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, AutoModelForTokenClassification
+from collections import defaultdict, Counter
+from pydantic import BaseModel, Field, validator, root_validator, model_validator
+from typing import Dict, List, Any
 from datetime import datetime
-import matplotlib.pyplot as plt
-import seaborn as sns
-
 
 class NEREntities(BaseModel):
     PERSON: List[str] = Field(default_factory=list, description="People names (e.g., 'Elon Musk', 'Dr. Smith')")
@@ -55,7 +35,7 @@ class NEREntities(BaseModel):
     def get_field_info(cls) -> Dict[str, Dict[str, Any]]:
         """Extracts field information for prompt generation"""
         field_info = {}
-        for field_name, field in cls.__fields__.items():
+        for field_name, field in cls.model_fields.items():
             field_info[field_name] = {
                 'name': field_name,
                 'description': field.description or '',
@@ -185,8 +165,8 @@ Text:
 
 
         hallucinated_locs = []
-        if "LOC" in corrected and "NATIONALITIES_RELIGIOUS_POLITICAL_GROUPS" in corrected :
-            for norp in corrected["NATIONALITIES_RELIGIOUS_POLITICAL_GROUPS"]:
+        if "LOC" in corrected and "NATIONALITIES_RELIGIOUS_GROUPS" in corrected :
+            for norp in corrected["NATIONALITIES_RELIGIOUS_GROUPS"]:
                 if norp in corrected["LOC"]:
                     hallucinated_locs.append(norp)
             corrected["LOC"] = [loc for loc in corrected["LOC"] if loc not in hallucinated_locs]
@@ -567,4 +547,4 @@ if __name__ == "__main__":
     sample_text = "Elon Musk is the CEO of SpaceX and Tesla, based in California. He was born on June 28, 1971."
     entities = ner_extractor.extract_entities(sample_text)
     print(entities)
-    
+

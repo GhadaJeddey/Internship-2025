@@ -2,10 +2,12 @@
   "summary": {
     "model_name": "sentence-transformers/all-mpnet-base-v2",
     "accuracy": 0.7297297297297297,
+    "top_3_accuracy": 0.918918918918919,
     "average_confidence": 0.6605169930878808,
     "total_samples": 37,
     "valid_samples": 37,
     "correct_predictions": 27,
+    "top_3_correct": 34,
     "total_time_seconds": 631.4550750255585,
     "evaluation_timestamp": "2025-08-20 18:40:01"
   },

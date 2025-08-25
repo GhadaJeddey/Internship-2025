@@ -2,7 +2,7 @@
 
 A high-performance FastAPI-based text summarization service using Facebook's BART-large-CNN model with intelligent text chunking and progressive summarization capabilities.
 
-## 🚀 Features
+##  Features
 
 - **High-quality summarization** using Facebook's BART-large-CNN model
 - **Intelligent text chunking** for long documents (paragraph-based and token-based)
@@ -12,7 +12,7 @@ A high-performance FastAPI-based text summarization service using Facebook's BAR
 - **Evaluation framework** with ROUGE and BERTScore metrics
 - **Health monitoring** and model information endpoints
 
-## 🏗️ Architecture
+##  Architecture
 
 ```text
 Summarization/
@@ -43,7 +43,7 @@ Summarization/
    - 20+ curated articles with reference summaries
    - Performance benchmarking data
 
-## 📊 Performance Metrics
+##  Performance Metrics
 
 Based on evaluation with 20 articles:
 
@@ -53,7 +53,7 @@ Based on evaluation with 20 articles:
 - **Average BERTScore F1**: 0.888
 
 
-## 🛠️ Installation
+##  Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -80,7 +80,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Start the API Server
 ```bash
@@ -162,7 +162,7 @@ Detailed model information and configuration.
 }
 ```
 
-## 🧠 Technical Details
+##  Technical Details
 
 ### Text Processing Logic
 
@@ -172,37 +172,6 @@ Detailed model information and configuration.
    - **Fallback**: Token-based chunking with overlap (400 tokens, 100 overlap)
 3. **Progressive Summarization**: Previous summary + current chunk → new summary
 
-
-## 🧪 Evaluation
-
-### Run Evaluation
-```python
-from Summarizer import Summarizer
-
-# Initialize summarizer
-summarizer = Summarizer()
-
-# Evaluate on all articles
-results = summarizer.evaluate_on_all_articles(
-    md_path="articles.md",
-    output_path="summarization_results.json"
-)
-
-# Print results
-print(f"Average ROUGE-1 F1: {results[0]:.4f}")
-print(f"Average ROUGE-2 F1: {results[1]:.4f}")
-print(f"Average ROUGE-L F1: {results[2]:.4f}")
-print(f"Average BERTScore F1: {results[3]:.4f}")
-```
-
-### Custom Evaluation
-```python
-# Evaluate single summary
-rouge_score, bert_score = summarizer.evaluation(
-    reference_summary="Reference text...",
-    summary="Generated summary..."
-)
-```
 
 ## 🙏 Acknowledgments
 

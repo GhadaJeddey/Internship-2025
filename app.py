@@ -4,7 +4,7 @@ import requests
 import json
 import time
 from typing import Optional
-from neo4j_graph import Neo4jGraphManager
+import sys
 
 st.set_page_config(
     page_title="Jobs Dashboard",
@@ -64,7 +64,7 @@ class SummarizationApp:
     def get_model_info(self):
         """Get model information from the API"""
         try:
-            response = requests.get(f"{self.api_base_url}/SummarizerModel/info", timeout=5)
+            response = requests.get(f"{self.api_base_url}/Summarizer/info", timeout=5)
             return response.json() if response.status_code == 200 else None
         except requests.exceptions.RequestException:
             return None
@@ -81,7 +81,7 @@ class SummarizationApp:
             }
             
             response = requests.post(
-                f"{self.api_base_url}/summarize",
+                f"{self.api_base_url}/Summarizer/summarize",
                 json=data,
                 timeout=60
             )
@@ -104,7 +104,7 @@ class NERApp:
     def get_model_info(self):
         """Get NER model information from the API"""
         try:
-            response = requests.get(f"{self.api_base_url}/NERModel/info", timeout=5)
+            response = requests.get(f"{self.api_base_url}/NER/info", timeout=5)
             return response.json() if response.status_code == 200 else None
         except requests.exceptions.RequestException:
             return None
@@ -120,7 +120,7 @@ class NERApp:
     def extract_entities(self, text):
         try:
             data = {"text": text}
-            response = requests.post(f"{self.api_base_url}/extract", json=data, timeout=60)
+            response = requests.post(f"{self.api_base_url}/NER/extract", json=data, timeout=60)
             if response.status_code == 200:
                 return True, response.json()
             else:
@@ -132,7 +132,7 @@ class NERApp:
             return False, f"Connection error: {str(e)}"
         
 class EntityApp:
-    def __init__(self, api_base_url="http://localhost:8002"):
+    def __init__(self, api_base_url="http://localhost:8001"):
         self.api_base_url = api_base_url
 
     def link_entity(self, mention, context, top_k=5, candidate_limit=15):
@@ -143,7 +143,7 @@ class EntityApp:
                 "top_k": top_k,
                 "candidate_limit": candidate_limit
             }
-            response = requests.post(f"{self.api_base_url}/link", json=data, timeout=60)
+            response = requests.post(f"{self.api_base_url}/EntityLinker/extract", json=data, timeout=60)
             if response.status_code == 200:
                 return True, response.json()
             else:
@@ -175,7 +175,7 @@ class REApp:
     def extract_relations(self, text, entities):
         try:
             data = {"text": text, "entities": entities}
-            response = requests.post(f"{self.api_base_url}/RE/extract", json=data, timeout=60)
+            response = requests.post(f"{self.api_base_url}/RE/extract", json=data, timeout=120)
             if response.status_code == 200:
                 return True, response.json()
             else:
@@ -202,57 +202,20 @@ class REApp:
             return False, str(e)
         
 def main():
-
-
-    # --- Neo4j Aura Graph Section ---
-    st.markdown('<h2 class="main-header">5. Neo4j Aura Graph</h2>', unsafe_allow_html=True)
-    st.divider()
-
-    with st.sidebar:
-        st.subheader("Neo4j Aura Credentials")
-        neo4j_uri = st.text_input("Neo4j Aura URI", value="bolt://<your-neo4j-uri>")
-        neo4j_user = st.text_input("Neo4j Username", value="neo4j")
-        neo4j_password = st.text_input("Neo4j Password", type="password")
-        show_graph = st.button("Show Neo4j Graph")
-
-    graph_manager = None
-    if neo4j_uri and neo4j_user and neo4j_password and "<your-neo4j-uri>" not in neo4j_uri:
-        try:
-            graph_manager = Neo4jGraphManager(neo4j_uri, neo4j_user, neo4j_password)
-        except Exception as e:
-            st.error(f"Failed to connect to Neo4j: {e}")
-
-    if show_graph and graph_manager:
-        try:
-            graph_data = graph_manager.fetch_graph(limit=25)
-            st.success("Connected to Neo4j Aura!")
-            st.markdown("#### Sample Graph Data (first 25 relationships)")
-            st.write("Nodes:", graph_data["nodes"])
-            st.write("Edges:", graph_data["edges"])
-            # Optional: visualize with networkx
-            try:
-                import networkx as nx
-                import matplotlib.pyplot as plt
-                G = nx.DiGraph()
-                for node in graph_data["nodes"]:
-                    G.add_node(node.get("id", str(node)), **node)
-                for src, dst, rel in graph_data["edges"]:
-                    G.add_edge(src, dst, label=rel)
-                fig, ax = plt.subplots(figsize=(8, 5))
-                pos = nx.spring_layout(G)
-                nx.draw(G, pos, with_labels=True, node_color='skyblue', ax=ax)
-                edge_labels = nx.get_edge_attributes(G, 'label')
-                nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, ax=ax)
-                st.pyplot(fig)
-            except Exception as e:
-                st.info(f"Graph visualization not available: {e}")
-        except Exception as e:
-            st.error(f"Failed to fetch or visualize Neo4j graph: {e}")
+    # Prompt for NER and RE API URLs at startup
+    if not hasattr(st.session_state, "ner_api_url") or not hasattr(st.session_state, "re_api_url"):
+        import getpass
+        print("Please enter the NER API base URL (e.g., http://localhost:8001): ", end="", flush=True)
+        ner_api_url = input().strip()
+        print("Please enter the Relation Extraction API base URL (e.g., http://localhost:8003): ", end="", flush=True)
+        re_api_url = input().strip()
+        st.session_state["ner_api_url"] = ner_api_url
+        st.session_state["re_api_url"] = re_api_url
 
     summarizer_app = SummarizationApp(api_base_url="http://localhost:8000")
-    ner_app = NERApp(api_base_url="http://localhost:8001")
-    entity_app = EntityApp(api_base_url="http://localhost:8002")
-    re_app = REApp(api_base_url="http://localhost:8003")
+    ner_app = NERApp(api_base_url=st.session_state["ner_api_url"])
+    entity_app = EntityApp(api_base_url="http://localhost:8001")
+    re_app = REApp(api_base_url=st.session_state["re_api_url"])
 
     # Sidebar
     with st.sidebar:
@@ -292,31 +255,6 @@ def main():
                 st.error(" API is unavailable.")
             
             
-
-        summarization_model_info = summarizer_app.get_model_info()
-        if summarization_model_info:
-            st.subheader("🧠 Summarization Model Info")
-            st.info(f"**Model:** {summarization_model_info.get('model_name', 'N/A')}")
-        
-        st.divider()
-
-        ner_model_info = ner_app.get_model_info()
-        if ner_model_info:
-            st.subheader("🧠 NER Model Info")
-            st.info(f"**Model:** {ner_model_info.get('model_name', 'N/A')}\n**Entity Types:** {ner_model_info.get('entity_types', 'N/A')}")
-        
-        st.divider()
-
-        el_model_info = entity_app.get_model_info()
-        if el_model_info:
-            st.subheader("🧠 Entity Linking Model Info")
-            st.info(f"**Model:** {el_model_info.get('model_name', 'N/A')}\n**Supported Entity Types:** {el_model_info.get('supported_entity_types', 'N/A')}")
-            
-        re_model_info = re_app.get_model_info()
-        if re_model_info:
-            st.subheader("🧠 RE Model Info")
-            st.info(f"**Model:** {re_model_info.get('model_name', 'N/A')}\n**Supported Relations:** {re_model_info.get('supported_relations', 'N/A')}\n**Supported Entity Types:** {re_model_info.get('supported_entity_types', 'N/A')}")
-
     st.markdown('<h1 class="main-header">Jobs Dashboard</h1>', unsafe_allow_html=True)
     st.divider()
 
@@ -349,147 +287,117 @@ def main():
         use_container_width=True
     )
 
+
+    # Use Streamlit containers for live updates
+    summarizer_container = st.container()
+    ner_container = st.container()
+    entity_linking_container = st.container()
+    re_container = st.container()
+
     summarization_result = None
     ner_result = None
     entity_linking_results = []
     re_result = None
 
     if run_jobs and input_text:
+        # --- Summarization Section ---
+        with summarizer_container:
+            st.markdown('<h2 class="main-header">1. Summarizer</h2>', unsafe_allow_html=True)
+            st.divider()
+            with st.spinner("Summarizing text..."):
+                summarization_success, summarization_result = summarizer_app.summarize_text(text=input_text)
+            if summarization_success and isinstance(summarization_result, dict) and "summary" in summarization_result:
+                st.markdown("#### 📄 Summary")
+                st.text(summarization_result["summary"])
+            elif summarization_success:
+                st.markdown("#### 📄 Summary (Raw)")
+                st.json(summarization_result)
+            else:
+                st.error(f"Summarization failed: {summarization_result}")
 
-        with st.spinner("Summarizing text..."):
-            summarization_success, summarization_result = summarizer_app.summarize_text(text=input_text)
-        
-        with st.spinner("Extracting entities..."):
-            ner_success, ner_result = ner_app.extract_entities(input_text)
-        
-        # Entity Linking and Relation Extraction (if NER succeeded)
-        if ner_success and isinstance(ner_result, dict):
-            relevant_types = [
-                "PERSON", "ORG", "LOC", "NATIONALITIES_RELIGIOUS_GROUPS", "LAW", "WORK_OF_ART"
-            ]
-            
-            for ent_type in relevant_types:
-                mentions = ner_result.get(ent_type, [])
-                for mention in mentions:
-                    with st.spinner(f"Linking entity: {mention} ({ent_type})"):
-                        entity_success, entity_data = entity_app.link_entity(
-                            mention=mention,
-                            context=input_text,
-                            top_k=3,
-                            candidate_limit=10
-                        )
-                        entity_linking_results.append({
+        # --- NER Section ---
+        with ner_container:
+            st.markdown('<h2 class="main-header">2. Named Entity Recognition</h2>', unsafe_allow_html=True)
+            st.divider()
+            with st.spinner("Extracting entities..."):
+                ner_success, ner_result = ner_app.extract_entities(input_text)
+            if ner_success and isinstance(ner_result, dict):
+                st.markdown("#### 📋 Extracted Entities")
+                st.json(ner_result)
+            elif ner_success:
+                st.markdown("#### 📋 Extracted Entities (Raw)")
+                st.json(ner_result)
+            else:
+                st.error(f"NER failed: {ner_result}")
+
+        # --- Entity Linking Section ---
+        with entity_linking_container:
+            st.markdown('<h2 class="main-header">3. Entity Linking</h2>', unsafe_allow_html=True)
+            st.divider()
+            entity_linking_results = []
+            if ner_success and isinstance(ner_result, dict):
+                relevant_types = [
+                    "PERSON", "ORG", "WORK_OF_ART"
+                ]
+                ner_entities = ner_result["entities"] if "entities" in ner_result else ner_result
+                for ent_type in relevant_types:
+                    mentions = ner_entities.get(ent_type, [])
+                    for mention in mentions:
+                        with st.spinner(f"Linking entity: {mention} ({ent_type})"):
+                            entity_success, entity_data = entity_app.link_entity(
+                                mention=mention,
+                                context=input_text,
+                                top_k=3,
+                                candidate_limit=10
+                            )
+                        result = {
                             "mention": mention,
                             "type": ent_type,
                             "success": entity_success,
                             "data": entity_data
-                        })
-            
-            # Relation Extraction (send full NER output)
-            with st.spinner("Extracting relations..."):
-                re_success, re_result = re_app.extract_relations(input_text, ner_result)
-                # --- Update Neo4j Graph live ---
-                if re_success and re_result and graph_manager:
-                    try:
-                        # Add nodes and relationships for each extracted relation
-                        relations = re_result.get("relations") if isinstance(re_result, dict) else None
-                        if relations and isinstance(relations, list):
-                            for rel in relations:
-                                # Example: rel = {"head": {"text": ..., "type": ...}, "tail": {...}, "relation": ...}
-                                head = rel.get("head")
-                                tail = rel.get("tail")
-                                rel_type = rel.get("relation")
-                                if head and tail and rel_type:
-                                    # Add/find head node
-                                    head_id = graph_manager.find_node(head.get("type", "Entity"), "text", head.get("text"))
-                                    if not head_id:
-                                        head_id = graph_manager.add_node(head.get("type", "Entity"), {"text": head.get("text")})
-                                    # Add/find tail node
-                                    tail_id = graph_manager.find_node(tail.get("type", "Entity"), "text", tail.get("text"))
-                                    if not tail_id:
-                                        tail_id = graph_manager.add_node(tail.get("type", "Entity"), {"text": tail.get("text")})
-                                    # Add relationship
-                                    if head_id and tail_id:
-                                        graph_manager.add_relationship(head_id, tail_id, rel_type)
-                        st.success("Neo4j graph updated with extracted relations.")
-                    except Exception as e:
-                        st.warning(f"Could not update Neo4j graph: {e}")
-
-    # Display results sections
-    
-    # --- Summarization Section ---
-    st.markdown('<h2 class="main-header">1. Summarizer</h2>', unsafe_allow_html=True)
-    st.divider()
-    
-    if summarization_result:
-        st.markdown("#### 📋 Generated Summary")
-        st.markdown(f'''<div class="summary-box"><p>{summarization_result["summary"]}</p></div>''', unsafe_allow_html=True)
-        st.markdown("#### Summary Statistics")
-        col_a, col_b = st.columns(2)
-        with col_a:
-            st.metric("Compression", f"{summarization_result['compression_ratio']:.1%}")
-        with col_b:
-            st.metric("Summary Length", f"{summarization_result['summary_length']:,} chars")
-        with st.expander("🔍 View Full API Response"):
-            st.json(summarization_result)
-    else:
-        st.info("Run all jobs to generate a summary from your text.")
-
-    # --- NER Section ---
-    st.markdown('<h2 class="main-header">2. Named Entity Recognition</h2>', unsafe_allow_html=True)
-    st.divider()
-    
-    if ner_result:
-        st.markdown("#### 📋 Extracted Entities")
-        st.json(ner_result)
-    else:
-        st.info("Run all jobs to extract entities from your text.")
-
-    # --- Entity Linking Section ---
-    st.markdown('<h2 class="main-header">3. Entity Linking</h2>', unsafe_allow_html=True)
-    st.divider()
-    
-    if entity_linking_results:
-        st.markdown("#### 📋 Entity Linking Results")
-        for result in entity_linking_results:
-            mention = result["mention"]
-            ent_type = result["type"]
-            entity_success = result["success"]
-            entity_data = result["data"]
-            
-            st.markdown(f"**Mention:** `{mention}`")
-            st.markdown(f"**Type:** `{ent_type}`")
-            
-            if entity_success:
-                if isinstance(entity_data, dict):
-                    candidates = entity_data.get("candidates") or entity_data.get("results")
-                    if candidates and isinstance(candidates, list) and len(candidates) > 0:
-                        top = candidates[0]
-                        desc = top.get("description") or top.get("summary")
-                        title = top.get("title") or top.get("label")
-                        if title:
-                            st.markdown(f"- **Top Candidate:** `{title}`")
-                        if desc:
-                            st.markdown(f"> {desc}")
-                    else:
-                        st.json(entity_data)
-                else:
-                    st.write(entity_data)
+                        }
+                        entity_linking_results.append(result)
+                        st.json(result)
+                        st.divider()
+                if not entity_linking_results:
+                    st.info("No relevant entities found for linking.")
             else:
-                st.error(f"Entity linking failed for `{mention}`: {entity_data}")
-            
-            st.divider()
-    else:
-        st.info("Run all jobs to link entities from your text.")
+                st.info("Run all jobs to link entities from your text.")
+                if ner_result:
+                    st.warning("⚠️ NER found entities but Entity Linking didn't run. Check if the Entity Linking API is running on the correct port.")
 
-    # --- Relation Extraction Section ---
-    st.markdown('<h2 class="main-header">4. Relation Extraction</h2>', unsafe_allow_html=True)
-    st.divider()
-    
-    if re_result is not None:
-        st.markdown("#### Extracted Relations")
-        st.success("Relations extracted successfully!")
-        st.json(re_result)
+        # --- Relation Extraction Section ---
+        with re_container:
+            st.markdown('<h2 class="main-header">4. Relation Extraction</h2>', unsafe_allow_html=True)
+            st.divider()
+            re_result = None
+            if ner_success and isinstance(ner_result, dict):
+                relevant_types = [
+                    "PERSON", "ORG", "NATIONALITIES_RELIGIOUS_GROUPS", "LOC"
+                ]
+                ner_entities = ner_result["entities"] if "entities" in ner_result else ner_result
+                re_entities = {k: v for k, v in ner_entities.items() if k in relevant_types}
+                with st.spinner("Extracting relations..."):
+                    re_success, re_result = re_app.extract_relations(input_text, re_entities)
+                if re_success and isinstance(re_result, dict) and "relations" in re_result:
+                    st.markdown("#### Extracted Relations")
+                    st.json(re_result)
+                elif re_success and isinstance(re_result, list) and len(re_result) > 0:
+                    if isinstance(re_result[0], dict) and "type" in re_result[0] and re_result[0]["type"] == "list_type":
+                        st.error("❌ Relation extraction failed - API validation error")
+                        st.error("The RE API expects entities in a specific format. Please check the API documentation.")
+                        with st.expander("🔍 View Error Details"):
+                            st.json(re_result)
+                    else:
+                        st.json(re_result)
+                elif re_success:
+                    st.warning("⚠️ No relations extracted or unexpected response format")
+                    with st.expander("🔍 View Raw Response"):
+                        st.json(re_result)
+                else:
+                    st.error(f"Relation extraction failed: {re_result}")
+            else:
+                st.info("Run all jobs to extract relations from your text.")
 
 if __name__ == "__main__":
     main()

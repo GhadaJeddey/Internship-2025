@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Dict, List, Optional, Any
 import logging
-import time
+import time,json
 import datetime
 import nest_asyncio
 import threading
@@ -57,7 +57,7 @@ async def root():
         "message": "Named Entity Recognition API",
         "version": "1.0.0",
         "docs": "/docs",
-        "health": "/NERhealth"
+        "health": "/NER/health"
     }
 
 @app.get("/NER/health", response_model=HealthResponse)

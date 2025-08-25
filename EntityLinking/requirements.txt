@@ -1,1 +1,7 @@
 
+sentence-transformers
+torch
+requests
+uvicorn
+fastapi
+pydantic

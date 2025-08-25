@@ -1,6 +1,5 @@
 from random import sample
 import torch, json, time
-from transformers import GenerationConfig 
 from evaluate import load
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from langchain.text_splitter import TokenTextSplitter

@@ -2,9 +2,17 @@
 
 A comprehensive Natural Language Processing pipeline for financial text analysis, featuring Named Entity Recognition (NER), Entity Linking, and Text Summarization with FastAPI-based microservices architecture.
 
-## 🚀 Features
+## Features
 
-### 1. Named Entity Recognition (NER)
+### 1. Text Summarization
+- **Model**: facebook/bart-large-cnn
+- **Capabilities**:
+  - Progressive summarization for long texts
+  - Paragraph-based and token-based chunking
+  - Configurable length and quality parameters
+  - ROUGE and BERTScore evaluation
+
+### 2. Named Entity Recognition (NER)
 - **Model**: Qwen/Qwen2.5-7B-Instruct
 - **Entities**: PERSON, ORG, LOC, WORK_OF_ART, NATIONALITIES_RELIGIOUS_GROUPS, DATE, TIME, MONEY, PERCENT, LAW
 - **Capabilities**: 
@@ -13,7 +21,7 @@ A comprehensive Natural Language Processing pipeline for financial text analysis
   - Comprehensive evaluation metrics
   - Confusion matrix generation
 
-### 2. Entity Linking
+### 3. Entity Linking
 - **Knowledge Base**: Wikidata
 - **Model**: sentence-transformers/all-mpnet-base-v2
 - **Features**:
@@ -23,60 +31,64 @@ A comprehensive Natural Language Processing pipeline for financial text analysis
   - Context compatibility assessment
   - Comprehensive evaluation framework
 
-### 3. Text Summarization
-- **Model**: facebook/bart-large-cnn
+### 4. Relation Extraction (RE)
+- **Model**: Custom or transformer-based RE model
 - **Capabilities**:
-  - Progressive summarization for long texts
-  - Paragraph-based and token-based chunking
-  - Configurable length and quality parameters
-  - ROUGE and BERTScore evaluation
+  - Extracts semantic relationships between recognized entities
+  - Outputs head, tail, and relation type for each detected relationship
+  - Integrates with Neo4j for live graph updates
 
-## 🏗️ Architecture
+### 5. Neo4j Graph Integration
+- **Component**: `Neo4jGraphManager` (see `neo4j_graph.py`)
+- **Features**:
+  - Live update of a Neo4j graph database with extracted entities and relations
+  - Fetch, add, and search nodes and relationships
+  - Visualize graph structure in the Streamlit dashboard
+  - Credentials and connection managed via the dashboard sidebar
+
+## Architecture
 
 ```
 AxeFinance/
+├── app.py                       # Streamlit dashboard orchestrator
 ├── NER-task/
-│   ├── NER.py                    # NER implementation
-│   ├── NerAPI.py                 # NER FastAPI service
-│   ├── evaluation_dataset.json  # NER evaluation data
-│   └── evaluation_results.json  # NER results
+    ├── NER.py                  # Core NER logic and model
+    ├── NerAPI.py               # FastAPI server exposing NER endpoints
+    ├── NerAPI.ipynb            # For google colab 
+    ├── evaluation_dataset.json # Dataset for evaluation
+    ├── evaluation_results.json # Evaluation metrics/results
+    ├── predictions_results.json# Model predictions on evaluation data
+    ├── requirements.txt        # Python dependencies
+    ├── .env                    # Environment variables (e.g., API keys)
+    ├── ReadME.md               # Documentation 
 ├── EntityLinking-task/
-│   ├── EntityLinking.py          # Entity linking implementation
-│   ├── LinkerAPI.py              # Entity linking FastAPI service
-│   ├── evaluation.json           # Entity linking evaluation data
-│   └── entity_linking_results.json # Entity linking results
+    ├── EntityLinking.py         # Core logic for entity linking and Wikidata API interaction
+    ├── LinkerAPI.py             # FastAPI server exposing entity linking endpoints
+    ├── requirements.txt         # Python dependencies
+    ├── entity_linking_results.json  # Evaluation results and metrics
+    ├── ReadME.md                # Documentation
 ├── Summarization-task/
-│   ├── Summarizer.py             # Summarization implementation
-│   ├── SummarizerAPI.py          # Summarization FastAPI service
-│   ├── articles.md               # Evaluation articles
-│   └── summarization_results.json # Summarization results
-└── RelationExtraction-task/
-    ├── RE.py                     # Relation extraction
-    ├── neo4j.py                  # Neo4j integration
-    └── Neo4jGraph.py             # Graph database operations
+    ├── Summarizer.py             # Summarization implementation
+    ├── SummarizerAPI.py          # Summarization FastAPI service
+    ├── LLM-Summary.py            # LLM that generated reference summaries for the evaluation articles
+    ├── articles.md               # Evaluation articles
+    ├── summarization_results.json # Summarization results
+    ├── summarization_result6s.json # evaluation results 
+    ├── requirements.txt 
+    └── ReadME.md
+├── RelationExtraction-task/
+    ├── RE.py                  # Core RE logic and model
+    ├── ReAPI.py               # FastAPI server exposing RE endpoints
+    ├── ReAPI.ipynb            # For Google Colab
+    ├── evaluation_dataset.json # Dataset for evaluation
+    ├── evaluation_results.json # Evaluation metrics/results
+    ├── predictions_results.json# Model predictions on evaluation data
+    ├── requirements.txt        # Python dependencies
+    ├── .env                    # Environment variables (e.g., API keys)
+    ├── README.md               # Documentation 
 ```
 
-## 📊 Performance Metrics
-
-### NER Performance
-- **Global Metrics**: Precision: 0.7473, Recall: 0.7313, F1: 0.7171
-- **Best Performing Entities**: 
-  - PERSON: F1 = 0.8475
-  - PERCENT: F1 = 0.9565
-  - MONEY: F1 = 0.8929
-
-### Entity Linking Performance
-- **Accuracy**: 54.3% (19/35 valid samples)
-- **Average Confidence**: 0.642
-- **Model**: sentence-transformers/all-mpnet-base-v2
-
-### Summarization Performance
-- **Average ROUGE-1 F1**: 0.416
-- **Average ROUGE-2 F1**: 0.154
-- **Average ROUGE-L F1**: 0.270
-- **Average BERTScore F1**: 0.888
-
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -103,7 +115,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Start NER Service
 ```bash
@@ -126,215 +138,23 @@ python SummarizerAPI.py
 # Service available at http://localhost:8000
 ```
 
-## 📡 API Usage
-
-### NER API
-
-**Extract entities:**
+### 4. Start Relation Extraction Service
 ```bash
-curl -X POST "http://localhost:8001/NER/extract" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "text": "Apple Inc. was founded by Steve Jobs in Cupertino, California in 1976."
-  }'
+cd RelationExtraction-task
+python ReAPI.py
+# Service available at http://localhost:8003
 ```
 
-**Response:**
-```json
-{
-  "entities": {
-    "ORG": ["Apple Inc."],
-    "PERSON": ["Steve Jobs"],
-    "LOC": ["Cupertino", "California"],
-    "DATE": ["1976"]
-  },
-  "processing_time": 2.34
-}
-```
-
-### Entity Linking API
-
-**Link entities:**
+### 5. Run the Streamlit Dashboard
 ```bash
-curl -X POST "http://localhost:8002/EntityLinking/extract" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "mention": "Apple",
-    "context": "Apple Inc. is a technology company based in Cupertino, California."
-  }'
+streamlit run app.py
+# Dashboard available at http://localhost:8501
 ```
+### 6. Neo4j Graph Integration
+The dashboard allows you to connect to a Neo4j Aura instance. Enter your credentials in the sidebar, and the graph will be updated live with extracted entities and relations after each relation extraction job.
 
-**Response:**
-```json
-{
-  "mention": "Apple",
-  "context": "Apple Inc. is a technology company...",
-  "best_entity": {
-    "qid": "Q312",
-    "label": "Apple Inc.",
-    "description": "American multinational technology company",
-    "score": 0.95,
-    "semantic_score": 0.92,
-    "string_score": 0.98,
-    "context_score": 0.85
-  }
-}
-```
 
-### Summarization API
-
-**Summarize text:**
-```bash
-curl -X POST "http://localhost:8000/Summarizer/summarize" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "text": "Your long article text here...",
-    "max_length": 400,
-    "min_length": 80
-  }'
-```
-
-**Response:**
-```json
-{
-  "summary": "Generated summary text..."
-}
-```
-
-## 🧪 Evaluation
-
-### Run NER Evaluation
-```python
-from NER import NERExtractor
-
-extractor = NERExtractor()
-results = extractor.evaluation("evaluation_dataset.json")
-```
-
-### Run Entity Linking Evaluation
-```python
-from EntityLinking import EntityLinker
-
-linker = EntityLinker()
-results = linker.evaluation(data, output_file="results.json")
-```
-
-### Run Summarization Evaluation
-```python
-from Summarizer import Summarizer
-
-summarizer = Summarizer()
-results = summarizer.evaluate_on_all_articles()
-```
-
-## 🔧 Configuration
-
-### Model Configuration
-- **NER Model**: Change in `NERExtractor.__init__()`
-- **Entity Linking Model**: Modify `EntityLinker.__init__()`
-- **Summarization Model**: Update `Summarizer.__init__()`
-
-### API Configuration
-- **Ports**: Modify in respective API files
-- **CORS**: Configure in FastAPI apps
-- **Rate Limiting**: Add middleware as needed
-
-## 📈 Monitoring
-
-### Health Checks
-```bash
-# NER Service
-curl http://localhost:8001/NER/health
-
-# Entity Linking Service  
-curl http://localhost:8002/Linkerhealth
-
-# Summarization Service
-curl http://localhost:8000/Summarizer/health
-```
-
-### Model Information
-```bash
-# Get model details
-curl http://localhost:8001/NER/ModelInfo
-curl http://localhost:8002/EntityLinking/ModelInfo
-curl http://localhost:8000/Summarizer/info
-```
-
-## 🐳 Docker Deployment
-
-### Build Images
-```bash
-# Build all services
-docker-compose build
-
-# Or build individually
-docker build -t axefinance-ner ./NER-task
-docker build -t axefinance-linker ./EntityLinking-task
-docker build -t axefinance-summarizer ./Summarization-task
-```
-
-### Run Services
-```bash
-# Start all services
-docker-compose up
-
-# Or run individually
-docker run -p 8001:8001 axefinance-ner
-docker run -p 8002:8002 axefinance-linker
-docker run -p 8000:8000 axefinance-summarizer
-```
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-1. **CUDA Out of Memory**
-   - Reduce batch sizes
-   - Use CPU-only models
-   - Increase GPU memory
-
-2. **Model Download Failures**
-   - Check internet connection
-   - Verify Hugging Face access
-   - Clear cache and retry
-
-3. **API Connection Issues**
-   - Check port availability
-   - Verify firewall settings
-   - Ensure services are running
-
-### Performance Optimization
-
-1. **GPU Acceleration**
-   - Install CUDA toolkit
-   - Use GPU-optimized models
-   - Configure device mapping
-
-2. **Memory Management**
-   - Monitor RAM usage
-   - Use model quantization
-   - Implement batch processing
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/GhadaJeddey/AxeFinance/issues)
-- **Documentation**: [API Docs](http://localhost:8000/docs)
-- **Email**: [contact@axefinance.com](mailto:contact@axefinance.com)
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Hugging Face Transformers](https://github.com/huggingface/transformers)
 - [FastAPI](https://github.com/tiangolo/fastapi)
