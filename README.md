@@ -38,14 +38,6 @@ A comprehensive Natural Language Processing pipeline for financial text analysis
   - Outputs head, tail, and relation type for each detected relationship
   - Integrates with Neo4j for live graph updates
 
-### 5. Neo4j Graph Integration
-- **Component**: `Neo4jGraphManager` (see `neo4j_graph.py`)
-- **Features**:
-  - Live update of a Neo4j graph database with extracted entities and relations
-  - Fetch, add, and search nodes and relationships
-  - Visualize graph structure in the Streamlit dashboard
-  - Credentials and connection managed via the dashboard sidebar
-
 ## Architecture
 
 ```
