@@ -81,7 +81,7 @@ AxeFinance/
 ```
 
 ## DEMO 
-https://github.com/GhadaJeddey/Internship-2025/issues/2#issue-3380824805
+https://github.com/user-attachments/assets/9ce64b5e-a306-4856-9654-909f0ba4e941
 
 ## Installation
 
